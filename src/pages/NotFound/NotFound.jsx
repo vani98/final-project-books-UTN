@@ -1,7 +1,8 @@
 import React from "react";
+import Layout from "../../components/Layout/Layout";
 
 const NotFound = () => {
-  return <div>Not found error 404</div>;
+  return <Layout>Not found error 404</Layout>;
 };
 
 export default NotFound;
