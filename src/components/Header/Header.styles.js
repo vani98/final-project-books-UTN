@@ -6,7 +6,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   height: 8rem;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid ${(props) => themes.colors.grey[0]};
 `;
 
 export const Logo = styled.img`
@@ -29,8 +29,9 @@ export const ListItem = styled.li`
     text-decoration: none;
     transition: color 0.5s;
   }
+
   a:hover {
-    color: #f2913d;
+    color: ${(props) => themes.colors.orange[0]};
     transition: color 0.5s;
   }
 `;
@@ -38,5 +39,5 @@ export const ListItem = styled.li`
 export const ListAndSearch = styled.div`
   display: flex;
   justify-content: center;
-  margin-right: 4rem;
+  margin-right: 2rem;
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import themes from "../../themes";
 
 export const SearchContainer = styled.div`
   position: relative;
@@ -6,13 +7,13 @@ export const SearchContainer = styled.div`
   justify-content: center;
 `;
 export const SearchInput = styled.input`
-  width: 40rem;
+  width: 35rem;
   height: 3.6rem;
   padding: 1rem 2rem;
-  border-radius: 5rem;
+  border-radius: 2rem;
   font-size: 1.3rem;
   font-style: italic;
-  border: 2px solid #eee;
+  border: 2px solid ${(props) => themes.colors.grey[0]};
 
   :focus {
     outline: none;
@@ -25,4 +26,5 @@ export const SearchButton = styled.img`
   right: 2rem;
   margin: auto;
   height: 2rem;
+  cursor: pointer;
 `;
