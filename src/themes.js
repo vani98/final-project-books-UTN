@@ -4,6 +4,7 @@ const themes = {
     white: ["#f3eae8"],
     grey: ["#eee", "#373737"],
     orange: ["#F2913D", "#EEA668"],
+    red: ["#F0615B"],
   },
 };
 

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import themes from "../../themes";
+import ShoppingCart from "../ShoppingCart";
 
 export const Header = styled.header`
   display: flex;
+  padding: 0 2rem;
   align-items: center;
   justify-content: space-between;
   height: 8rem;
@@ -11,7 +13,6 @@ export const Header = styled.header`
 
 export const List = styled.ul`
   display: flex;
-  align-items: center;
   list-style: none;
 `;
 
@@ -30,8 +31,12 @@ export const ListItem = styled.li`
   }
 `;
 
-export const ListAndSearch = styled.div`
+export const RightContainer = styled.div`
   display: flex;
-  justify-content: center;
-  margin-right: 2rem;
+  align-items: center;
+`;
+
+// TODO
+export const SCart = styled(ShoppingCart)`
+  margin: 2rem;
 `;

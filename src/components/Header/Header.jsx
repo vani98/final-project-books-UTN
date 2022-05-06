@@ -1,6 +1,6 @@
 import * as SC from "./Header.styles";
 import { IconLogo } from "../../assets/images";
-import SearchBar from "../SearchBar/SearchBar";
+import SearchBar from "../SearchBar";
 import SVGIcon from "../SVGIcon";
 import themes from "../../themes";
 
@@ -10,7 +10,7 @@ const Header = () => {
       <a href="/">
         <SVGIcon src={IconLogo} color={themes.colors.orange[0]} size="6rem" />
       </a>
-      <SC.ListAndSearch>
+      <SC.RightContainer>
         <SC.List>
           <SC.ListItem>
             <a href="/">Home</a>
@@ -26,7 +26,8 @@ const Header = () => {
           </SC.ListItem>
         </SC.List>
         <SearchBar />
-      </SC.ListAndSearch>
+        <SC.SCart />
+      </SC.RightContainer>
     </SC.Header>
   );
 };
