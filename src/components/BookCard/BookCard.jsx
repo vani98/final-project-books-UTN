@@ -11,9 +11,11 @@ const BookCard = ({ data }) => {
           <img src={image} alt="portada" />
         </SC.CardHeader>
         <SC.CardBody>
-          {/* {genres.map((genre) => (
-            <Tag key={genre}></Tag>
-          ))} */}
+          <SC.TagContainer>
+            {genres.map((genre) => (
+              <Tag key={genre}></Tag>
+            ))}
+          </SC.TagContainer>
 
           <span>{}</span>
           <SC.Title>{title}</SC.Title>

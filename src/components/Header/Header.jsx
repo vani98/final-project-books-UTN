@@ -1,12 +1,14 @@
 import * as SC from "./Header.styles";
-import images from "../../../assets/images";
+import { IconLogo } from "../../assets/images";
 import SearchBar from "../SearchBar/SearchBar";
+import SVGIcon from "../SVGIcon";
+import themes from "../../themes";
 
 const Header = () => {
   return (
     <SC.Header>
       <a href="/">
-        <SC.Logo src={images.logo} alt="logo" />
+        <SVGIcon src={IconLogo} color={themes.colors.orange[0]} size="6rem" />
       </a>
       <SC.ListAndSearch>
         <SC.List>

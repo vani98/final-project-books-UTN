@@ -9,12 +9,6 @@ export const Header = styled.header`
   border-bottom: 2px solid ${(props) => themes.colors.grey[0]};
 `;
 
-export const Logo = styled.img`
-  width: 10rem;
-  height: 6rem;
-  color: red;
-`;
-
 export const List = styled.ul`
   display: flex;
   align-items: center;
@@ -27,12 +21,12 @@ export const ListItem = styled.li`
     font-size: 2rem;
     color: black;
     text-decoration: none;
-    transition: color 0.5s;
+    transition: color 0.2s;
   }
 
   a:hover {
     color: ${(props) => themes.colors.orange[0]};
-    transition: color 0.5s;
+    transition: color 0.2s;
   }
 `;
 

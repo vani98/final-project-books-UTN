@@ -34,3 +34,8 @@ export const Title = styled.p`
   margin-bottom: 0.4rem;
   letter-spacing: 0.1rem;
 `;
+
+export const TagContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
