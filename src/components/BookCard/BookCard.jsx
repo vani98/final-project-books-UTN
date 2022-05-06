@@ -3,6 +3,7 @@ import Tag from "../Tag/Tag";
 
 const BookCard = ({ data }) => {
   const { title, author, price, genres, published, publishers, image } = data;
+
   return (
     <>
       <SC.Card>
@@ -10,16 +11,16 @@ const BookCard = ({ data }) => {
           <img src={image} alt="portada" />
         </SC.CardHeader>
         <SC.CardBody>
-          {genres.map((genre) => (
+          {/* {genres.map((genre) => (
             <Tag key={genre}></Tag>
-          ))}
+          ))} */}
 
           <span>{}</span>
-          <p>{title}</p>
-          <p>{author}</p>
+          <SC.Title>{title}</SC.Title>
+          <p>Author: {author}</p>
+          <p>Published: {published}</p>
+          <p>Publishers: {publishers}</p>
           <p>uSd {price}</p>
-          <p>{published}</p>
-          <p>{publishers}</p>
         </SC.CardBody>
       </SC.Card>
     </>

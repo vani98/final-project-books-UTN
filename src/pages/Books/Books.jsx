@@ -7,11 +7,15 @@ const Books = () => {
   const { data, isLoading } = useApi("books.json");
   return (
     <Layout>
-      <SC.Container>
-        {data.map((book) => (
-          <BookCard data={book} key={book.id}></BookCard>
-        ))}
-      </SC.Container>
+      {isLoading ? (
+        <p>aa</p>
+      ) : (
+        <SC.Container>
+          {data.map((book) => (
+            <BookCard data={book} key={book.id}></BookCard>
+          ))}
+        </SC.Container>
+      )}
     </Layout>
   );
 };
