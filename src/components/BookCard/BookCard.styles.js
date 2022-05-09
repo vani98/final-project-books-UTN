@@ -6,9 +6,6 @@ export const Card = styled.div`
   margin: 1rem;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  /* :hover {
-    opacity: 0;
-  } */
 `;
 
 export const CardHeader = styled.div`
@@ -33,9 +30,15 @@ export const Title = styled.p`
   text-align: center;
   margin-bottom: 0.4rem;
   letter-spacing: 0.1rem;
+  width: 18rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 export const TagContainer = styled.div`
+  border: 1px solid blue;
+  padding: 0.5rem 0.2rem;
   display: flex;
-  flex-wrap: wrap;
+  /* overflow-x: auto; */
 `;

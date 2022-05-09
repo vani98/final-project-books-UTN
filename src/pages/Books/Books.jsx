@@ -5,7 +5,8 @@ import useApi from "../../hooks/useApi";
 import Loader from "../../components/Loader";
 
 const Books = () => {
-  const { data, isLoading } = useApi("books.json");
+  const [bookData, isLoading] = useApi("books.json");
+  const [genreData] = useApi("genres.json");
 
   return (
     <Layout>
@@ -15,8 +16,8 @@ const Books = () => {
         </SC.LoaderWrapper>
       ) : (
         <SC.Container>
-          {data.map((book) => (
-            <BookCard data={book} key={book.id} />
+          {bookData.map((book) => (
+            <BookCard book={book} genreData={genreData} key={book.id} />
           ))}
         </SC.Container>
       )}

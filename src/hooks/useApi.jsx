@@ -19,6 +19,6 @@ const useApi = (endpoint) => {
     };
     getData();
   }, []);
-  return { data, isLoading };
+  return [data, isLoading];
 };
 export default useApi;
