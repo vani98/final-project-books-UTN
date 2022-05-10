@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import themes from "../../themes";
-import ShoppingCart from "../ShoppingCart";
 
 export const Header = styled.header`
   display: flex;
@@ -16,16 +16,13 @@ export const List = styled.ul`
   list-style: none;
 `;
 
-export const ListItem = styled.li`
-  a {
-    margin-right: 2rem;
-    font-size: 2rem;
-    color: black;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  a:hover {
+export const NavLink = styled(Link)`
+  margin-right: 2rem;
+  font-size: 2rem;
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s;
+  :hover {
     color: ${(props) => themes.colors.orange[0]};
     transition: color 0.2s;
   }
@@ -34,9 +31,4 @@ export const ListItem = styled.li`
 export const RightContainer = styled.div`
   display: flex;
   align-items: center;
-`;
-
-// TODO
-export const SCart = styled(ShoppingCart)`
-  margin: 2rem;
 `;

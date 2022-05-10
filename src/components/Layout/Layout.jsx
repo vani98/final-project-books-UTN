@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../Header";
+import NavigationBar from "../NavigationBar";
 import * as SC from "./Layout.styles";
 
 const Layout = ({ children }) => {
   return (
     <div>
-      <Header />
+      <NavigationBar />
       <SC.Container>{children}</SC.Container>
     </div>
   );

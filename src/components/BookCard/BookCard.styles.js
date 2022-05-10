@@ -11,7 +11,6 @@ export const Card = styled.div`
 export const CardHeader = styled.div`
   height: 24rem;
   overflow: hidden;
-
   img {
     width: 100%;
     height: 100%;
@@ -26,6 +25,11 @@ export const CardBody = styled.div`
   }
 `;
 
+export const Price = styled.p`
+  text-align: right;
+  padding: 0.1rem;
+`;
+
 export const Title = styled.p`
   text-align: center;
   margin-bottom: 0.4rem;
@@ -36,9 +40,16 @@ export const Title = styled.p`
   overflow: hidden;
 `;
 
+export const Author = styled.p`
+  text-align: center;
+  color: ${(props) => themes.colors.grey[1]};
+`;
+
 export const TagContainer = styled.div`
-  border: 1px solid blue;
   padding: 0.5rem 0.2rem;
   display: flex;
-  /* overflow-x: auto; */
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 5rem;
+  align-items: center;
 `;

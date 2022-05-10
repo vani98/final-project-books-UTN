@@ -15,11 +15,16 @@ const Books = () => {
           <Loader />
         </SC.LoaderWrapper>
       ) : (
-        <SC.Container>
-          {bookData.map((book) => (
-            <BookCard book={book} genreData={genreData} key={book.id} />
-          ))}
-        </SC.Container>
+        <>
+          <SC.PageTitle>Conoce el catálogo de libros que tenemos</SC.PageTitle>
+          <SC.PageSubTitle>Elige el que más desees ❤</SC.PageSubTitle>
+
+          <SC.BookContainer>
+            {bookData.map((book) => (
+              <BookCard book={book} genreData={genreData} key={book.id} />
+            ))}
+          </SC.BookContainer>
+        </>
       )}
     </Layout>
   );

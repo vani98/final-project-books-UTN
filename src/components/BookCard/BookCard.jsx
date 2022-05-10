@@ -1,5 +1,6 @@
 import * as SC from "./BookCard.styles";
 import Tag from "../Tag";
+import CardButton from "../CardButton/Button";
 
 const BookCard = ({ book, genreData }) => {
   const { title, author, price, genres, published, publishers, image } = book;
@@ -9,9 +10,10 @@ const BookCard = ({ book, genreData }) => {
         <SC.CardHeader>
           <img src={image} alt="portada" />
         </SC.CardHeader>
-
         <SC.CardBody>
+          <SC.Price>{price}U$S</SC.Price>
           <SC.Title>{title}</SC.Title>
+          <SC.Author>{author}</SC.Author>
           <SC.TagContainer>
             {genres.map((genreId) => {
               const genreFound = genreData.find(
@@ -22,11 +24,7 @@ const BookCard = ({ book, genreData }) => {
               ) : null;
             })}
           </SC.TagContainer>
-
-          {/* <p>Author: {author}</p>
-          <p>Published: {published}</p>
-          <p>Publishers: {publishers}</p>
-          <p>uSd {price}</p> */}
+          <CardButton>ADD TO CART</CardButton>
         </SC.CardBody>
       </SC.Card>
     </>
