@@ -10,14 +10,14 @@ export const LoaderWrapper = styled.div`
 `;
 
 export const PageTitle = styled.p`
-  margin: 2rem;
+  margin-bottom: 2rem;
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
-  ::after {
-    font-weight: negrita;
-    color: ${(props) => themes.colors.orange[0]};
-    content: " para ti";
+  span {
+    font-size: 4rem;
+    font-weight: 700;
+    color: ${themes.colors.orange[0]};
   }
 `;
 

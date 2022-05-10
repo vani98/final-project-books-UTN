@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import themes from "../../themes";
+import themes from "../../../themes";
 
 export const Header = styled.header`
   display: flex;
@@ -8,7 +8,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   height: 8rem;
-  border-bottom: 2px solid ${(props) => themes.colors.grey[0]};
+  border-bottom: 2px solid ${themes.colors.grey[0]};
 `;
 
 export const List = styled.ul`
@@ -23,7 +23,7 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   transition: color 0.2s;
   :hover {
-    color: ${(props) => themes.colors.orange[0]};
+    color: ${themes.colors.orange[0]};
     transition: color 0.2s;
   }
 `;

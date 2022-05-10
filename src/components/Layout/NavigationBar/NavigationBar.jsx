@@ -1,11 +1,12 @@
-import * as SC from "./Header.styles";
-import { IconLogo } from "../../assets/images";
-import SearchBar from "../SearchBar";
-import SVGIcon from "../SVGIcon";
-import themes from "../../themes";
-import ShoppingCart from "../ShoppingCart";
+import * as SC from "./NavigationBar.styles";
+import { IconLogo } from "../../../assets/images";
+import SearchBar from "./SearchBar";
+import SVGIcon from "../../SVGIcon";
+import themes from "../../../themes";
+import ShoppingCart from "./ShoppingCart";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const NavigationBar = () => {
   return (
     <SC.Header>
       <SC.NavLink to="/">
@@ -19,10 +20,12 @@ const Header = () => {
           <SC.NavLink to="/about-us">About Us</SC.NavLink>
         </ul>
         <SearchBar />
-        <ShoppingCart />
+        <Link to="/cart">
+          <ShoppingCart />
+        </Link>
       </SC.RightContainer>
     </SC.Header>
   );
 };
 
-export default Header;
+export default NavigationBar;

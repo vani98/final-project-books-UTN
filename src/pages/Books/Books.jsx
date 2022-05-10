@@ -1,8 +1,9 @@
 import * as SC from "./Books.styles";
 import Layout from "../../components/Layout/Layout";
-import BookCard from "../../components/BookCard";
+
 import useApi from "../../hooks/useApi";
 import Loader from "../../components/Loader";
+import BookCard from "./BookCard";
 
 const Books = () => {
   const [bookData, isLoading] = useApi("books.json");
@@ -16,12 +17,14 @@ const Books = () => {
         </SC.LoaderWrapper>
       ) : (
         <>
-          <SC.PageTitle>Conoce el catálogo de libros que tenemos</SC.PageTitle>
+          <SC.PageTitle>
+            Conoce el catálogo de libros que tenemos <span>para ti</span>
+          </SC.PageTitle>
           <SC.PageSubTitle>Elige el que más desees ❤</SC.PageSubTitle>
 
           <SC.BookContainer>
             {bookData.map((book) => (
-              <BookCard book={book} genreData={genreData} key={book.id} />
+              <BookCard data={book} genreData={genreData} key={book.id} />
             ))}
           </SC.BookContainer>
         </>

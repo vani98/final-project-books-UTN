@@ -8,6 +8,6 @@ export const Tag = styled.span`
   margin-right: 0.5rem;
   padding: 0.2rem 0.4rem;
   border-radius: 2rem;
-  color: ${(props) => themes.colors.white[0]};
-  background-color: ${(props) => themes.colors.orange[2]};
+  color: ${themes.colors.white[0]};
+  background-color: ${themes.colors.orange[2]};
 `;

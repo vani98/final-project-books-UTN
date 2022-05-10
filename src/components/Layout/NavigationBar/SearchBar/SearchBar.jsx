@@ -1,4 +1,4 @@
-import { IconSearch } from "../../assets/images";
+import { IconSearch } from "../../../../assets/images";
 import * as SC from "./SearchBar.styles.js";
 
 const SearchBar = () => {

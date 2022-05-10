@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import themes from "../../themes";
+import themes from "../../../../themes";
 
 export const SearchContainer = styled.div`
   position: relative;
@@ -13,7 +13,7 @@ export const SearchInput = styled.input`
   border-radius: 2rem;
   font-size: 1.3rem;
   font-style: italic;
-  border: 2px solid ${(props) => themes.colors.grey[0]};
+  border: 2px solid ${themes.colors.grey[0]};
 
   :focus {
     outline: none;
