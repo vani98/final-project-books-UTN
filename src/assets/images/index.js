@@ -5,6 +5,17 @@ import IconShoppingCart from "./IconShoppingCart.svg";
 import IconInfo from "./IconInfo.svg";
 import IconAddToCart from "./IconAddToCart.svg";
 import ImgLookingBook from "./ImgLookingBook.svg";
+import IconPhone from "./IconPhone.svg";
+import IconTwitter from "./IconTwitter.svg";
+import IconFacebook from "./IconFacebook.svg";
+import IconInstagram from "./IconInstagram.svg";
+import IconLocation from "./IconLocation.svg";
+import IconEmail from "./IconEmail.svg";
+import IconVisa from "./IconVisa.svg";
+import IconMastercard from "./IconMastercard.svg";
+import IconPaypal from "./IconPaypal.svg";
+import IconAmericanexpress from "./IconAmericanexpress.svg";
+
 export {
   IconLogo,
   IconSearch,
@@ -13,4 +24,14 @@ export {
   IconInfo,
   IconAddToCart,
   ImgLookingBook,
+  IconPhone,
+  IconLocation,
+  IconTwitter,
+  IconFacebook,
+  IconInstagram,
+  IconEmail,
+  IconVisa,
+  IconMastercard,
+  IconPaypal,
+  IconAmericanexpress,
 };
