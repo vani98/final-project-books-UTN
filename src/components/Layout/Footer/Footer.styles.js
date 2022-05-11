@@ -26,10 +26,9 @@ export const Contact = styled.div`
   p {
     margin: 0 0 2rem 2rem;
   }
-`;
-
-export const ContactGroup = styled.div`
-  display: flex;
+  div {
+    display: flex;
+  }
 `;
 
 export const Icon = styled.img`
@@ -56,15 +55,27 @@ export const Payment = styled.div`
   }
 `;
 
-export const Navigation = styled.div`
-  height: 3rem;
-  text-align: right;
+export const FooterBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: ${themes.colors.grey[3]};
 
   a {
     color: black;
     text-decoration: none;
-    margin: 2rem;
-    /* text-align: center; */
+  }
+`;
+
+export const Copy = styled.a`
+  :hover {
+    color: ${themes.colors.orange[2]};
+  }
+`;
+
+export const Navigation = styled.div`
+  a {
+    margin-left: 4rem;
   }
   a:hover {
     opacity: 60%;
