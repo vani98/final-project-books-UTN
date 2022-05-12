@@ -11,7 +11,6 @@ export const FooterContainer = styled.div`
 
 export const FooterTop = styled.div`
   border-bottom: 1px solid ${themes.colors.grey[0]};
-
   display: flex;
   justify-content: space-between;
   padding: 3rem 7rem;

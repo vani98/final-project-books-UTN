@@ -23,9 +23,7 @@ const BookCard = ({ data }) => {
       <SC.Image src={image} />
       <SC.Data>
         <SC.Title>{title}</SC.Title>
-
-        <SC.Description>{shortDescription}</SC.Description>
-
+        <div>{shortDescription}</div>
         <SC.ActionButtons>
           <SC.Price>{priceFormat(price)}</SC.Price>
           <div>

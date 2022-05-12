@@ -10,7 +10,7 @@ const SearchBar = () => {
   const [data, isLoading] = useApi("books.json");
 
   const searchChange = (e) => {
-    setSearchBoxValue(e.target.value);
+    setSearchBoxValue(get.value);
   };
 
   const filteredByInput = data
@@ -21,8 +21,6 @@ const SearchBar = () => {
         published.toString().includes(searchBoxValue.toLowerCase().trim())
     )
     .slice(0, MAX_AMOUNT_RESULTS);
-
-  console.log(filteredByInput);
 
   return (
     <>

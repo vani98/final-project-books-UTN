@@ -54,14 +54,10 @@ export const Title = styled.p`
   color: ${themes.colors.primary};
 `;
 
-export const Description = styled.p`
-  /* margin-top: 5rem; */
-`;
-
 export const Price = styled.p`
   font-weight: ${themes.fontWeight[0]};
   color: ${themes.colors.primary};
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 `;
 
 export const ButtonWrapper = styled.div`
