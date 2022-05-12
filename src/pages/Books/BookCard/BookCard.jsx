@@ -3,43 +3,33 @@ import * as SC from "./BookCard.styles";
 import { priceFormat } from "../../../utils";
 import SVGIcon from "../../../components/SVGIcon";
 import { IconAddToCart, IconInfo } from "../../../assets/images";
-
-export const USER_CART = "USER_CART";
+import useAddToCart from "../../../hooks/useAddToCart";
 
 const BookCard = ({ data }) => {
-  const { image, title, price, id } = data;
+  const { image, title, price, id, description } = data;
+  const { handleAddToCart } = useAddToCart("USER_CART", id);
 
-  const handleAddToCart = (id) => {
-    const previousCart = JSON.parse(localStorage.getItem(USER_CART));
-
-    let newCart;
-
-    if (!previousCart) {
-      newCart = [id];
-    } else {
-      newCart = [...previousCart, id];
-    }
-
-    localStorage.setItem(USER_CART, JSON.stringify(newCart));
-  };
+  const shortDescription = `${description.slice(0, 80)}...`;
 
   return (
     <SC.Container>
       <SC.Image src={image} />
       <SC.Data>
-        <SC.Title>{title}</SC.Title>
-        <div>description</div>
-        <div>
+        <SC.CardTop>
+          <SC.Title>{title}</SC.Title>
+          <SC.Description>{shortDescription}</SC.Description>
+        </SC.CardTop>
+        <SC.CardBottom>
           <SC.Price>{priceFormat(price)}</SC.Price>
           <div>
             <SC.ButtonWrapper onClick={() => handleAddToCart(id)}>
-              <SVGIcon src={IconAddToCart} color="black" size="2rem" />
+              <SVGIcon src={IconAddToCart} color="white" size="2.2rem" />
             </SC.ButtonWrapper>
-            <SC.ButtonWrapper>
-              <SVGIcon src={IconInfo} color="black" size="2rem" />
+            <SC.ButtonWrapper onClick={() => console.log(id)}>
+              <SVGIcon src={IconInfo} color="white" size="2.2rem" />
             </SC.ButtonWrapper>
           </div>
-        </div>
+        </SC.CardBottom>
       </SC.Data>
     </SC.Container>
   );

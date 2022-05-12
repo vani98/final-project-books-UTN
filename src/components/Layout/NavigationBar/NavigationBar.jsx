@@ -10,7 +10,7 @@ const NavigationBar = () => {
   return (
     <SC.Header>
       <SC.NavLink to="/">
-        <SVGIcon src={IconLogo} color={themes.colors.orange[0]} size="6rem" />
+        <SVGIcon src={IconLogo} color={themes.colors.primary} size="6rem" />
       </SC.NavLink>
       <SC.RightContainer>
         <ul>

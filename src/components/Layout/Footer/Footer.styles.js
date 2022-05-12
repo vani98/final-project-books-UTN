@@ -69,7 +69,7 @@ export const FooterBottom = styled.div`
 
 export const Copy = styled.a`
   :hover {
-    color: ${themes.colors.orange[2]};
+    color: ${themes.colors.orange[1]};
   }
 `;
 

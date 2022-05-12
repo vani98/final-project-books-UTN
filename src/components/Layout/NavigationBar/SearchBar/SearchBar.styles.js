@@ -28,3 +28,14 @@ export const SearchButton = styled.img`
   height: 2rem;
   cursor: pointer;
 `;
+
+// export const SearchResults = styled.div`
+//   position: absolute;
+//   top: 8rem;
+//   right: 0;
+//   width: 100%;
+//   background-color: #fff;
+//   font-size: 1rem;
+//   text-align: center;
+//   border-bottom: 2px solid ${themes.colors.grey[0]};
+// `;

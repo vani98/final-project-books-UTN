@@ -23,7 +23,7 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   transition: color 0.2s;
   :hover {
-    color: ${themes.colors.orange[0]};
+    color: ${themes.colors.primary};
     transition: color 0.2s;
   }
 `;

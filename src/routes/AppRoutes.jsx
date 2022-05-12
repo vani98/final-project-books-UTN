@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import Books from "../pages/Books";
 import Cart from "../pages/Cart";
+import BookPage from "../pages/Books/BookPage";
 
 const AppRoutes = () => {
   return (
@@ -15,7 +16,10 @@ const AppRoutes = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/books" element={<Books />} />
         <Route path="/editorials" element={<Editorials />} />
+        <Route path="/books/:bookId" element={<BookPage />} />
+
         <Route path="/cart" element={<Cart />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

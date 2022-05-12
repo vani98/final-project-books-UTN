@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import SVGIcon from "../../../components/SVGIcon";
+import themes from "../../../themes";
 
 const startTransition = `0.2s ease`;
 const endTransition = `0.2s ease`;
@@ -7,8 +9,10 @@ export const Data = styled.div`
   width: 100%;
   height: 0%;
   overflow: hidden;
-
   transition: ${startTransition};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const Image = styled.img`
@@ -23,7 +27,6 @@ export const Image = styled.img`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-
   width: 20rem;
   aspect-ratio: 9/14;
   border: 1px solid grey;
@@ -42,13 +45,40 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p`
-  margin-bottom: 1rem;
   text-align: center;
   font-weight: 700;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: ${themes.colors.primary};
+`;
+
+export const Description = styled.p`
+  margin-top: 5rem;
 `;
 
 export const Price = styled.p``;
 
 export const ButtonWrapper = styled.div`
-  border: 1px solid red;
+  margin-left: 0.8rem;
+  padding: 0.6rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  background-color: black;
+`;
+
+export const CardTop = styled.div``;
+
+export const CardBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+
+    /* border: 1px solid red; */
+    /* justify-content: ; */
+  }
 `;

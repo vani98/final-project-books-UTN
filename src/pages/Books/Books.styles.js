@@ -5,7 +5,6 @@ export const LoaderWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 70vh;
 `;
 
@@ -17,12 +16,12 @@ export const PageTitle = styled.p`
   span {
     font-size: 4rem;
     font-weight: 700;
-    color: ${themes.colors.orange[0]};
+    color: ${themes.colors.primary};
   }
 `;
 
 export const PageSubTitle = styled.p`
-  margin: 2rem;
+  margin-bottom: 5rem;
   font-size: 3rem;
   text-align: center;
 `;

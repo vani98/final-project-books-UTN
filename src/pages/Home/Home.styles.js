@@ -16,7 +16,7 @@ export const WelcomeText = styled.p`
   > span {
     font-size: 4rem;
     font-weight: 700;
-    color: ${themes.colors.orange[0]};
+    color: ${themes.colors.primary};
   }
 `;
 
