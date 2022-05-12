@@ -6,25 +6,23 @@ import * as SC from "./SearchBar.styles.js";
 const MAX_AMOUNT_RESULTS = 5;
 
 const SearchBar = () => {
-  const [search, setSearch] = useState("");
-  // const [searchBoxValue, setSearchBoxValue] = useState("");
+  const [searchBoxValue, setSearchBoxValue] = useState("");
   const [data, isLoading] = useApi("books.json");
 
   const searchChange = (e) => {
-    setSearch(e.target.value);
+    setSearchBoxValue(e.target.value);
   };
 
-  // filteredByTitle, dataFilteredByTitle
-  const titleFiltered =
-    search.trim() &&
-    data
-      .filter(
-        ({ title, author, published }) =>
-          title.toLowerCase().includes(search.toLowerCase().trim()) ||
-          author.toLowerCase().includes(search.toLowerCase().trim()) ||
-          published.toString().includes(search.toLowerCase().trim())
-      )
-      .map((book) => book.title);
+  const filteredByInput = data
+    .filter(
+      ({ title, author, published }) =>
+        title.toLowerCase().includes(searchBoxValue.toLowerCase().trim()) ||
+        author.toLowerCase().includes(searchBoxValue.toLowerCase().trim()) ||
+        published.toString().includes(searchBoxValue.toLowerCase().trim())
+    )
+    .slice(0, MAX_AMOUNT_RESULTS);
+
+  console.log(filteredByInput);
 
   return (
     <>
@@ -35,11 +33,13 @@ const SearchBar = () => {
         />
         <SC.SearchButton src={IconSearch}></SC.SearchButton>
       </SC.SearchContainer>
-      {!!titleFiltered && (
+      {searchBoxValue && (
         <SC.SearchResults>
-          {titleFiltered.slice(0, MAX_AMOUNT_RESULTS).map((result) => (
-            <p>{result}</p>
-          ))}
+          {filteredByInput.length > 0 ? (
+            filteredByInput.map((book) => <p key={book.id}>{book.title}</p>)
+          ) : (
+            <p>Not found</p>
+          )}
         </SC.SearchResults>
       )}
     </>
