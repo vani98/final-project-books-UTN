@@ -7,6 +7,7 @@ const themes = {
     orange: ["#EEA668", "#FF6331"],
     red: ["#F0615B"],
   },
+  fontWeight: ["700"],
 };
 
 export default themes;

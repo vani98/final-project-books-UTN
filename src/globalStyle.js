@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
     font-size:1.6rem;
   }
   body{
-    font-family:'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+    /* font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif'; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 `;
 

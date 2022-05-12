@@ -55,22 +55,24 @@ export const Title = styled.p`
 `;
 
 export const Description = styled.p`
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 `;
 
-export const Price = styled.p``;
+export const Price = styled.p`
+  font-weight: ${themes.fontWeight[0]};
+  color: ${themes.colors.primary};
+  font-size: 1.8rem;
+`;
 
 export const ButtonWrapper = styled.div`
   margin-left: 0.8rem;
-  padding: 0.6rem;
+  padding: 0.8rem;
   border-radius: 5rem;
   cursor: pointer;
   background-color: black;
 `;
 
-export const CardTop = styled.div``;
-
-export const CardBottom = styled.div`
+export const ActionButtons = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
