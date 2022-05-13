@@ -4,6 +4,7 @@ import { priceFormat } from "../../../utils";
 import SVGIcon from "../../../components/SVGIcon";
 import { IconAddToCart, IconInfo } from "../../../assets/images";
 import useAddToCart, { USER_CART } from "../../../hooks/useAddToCart";
+import { useNavigate } from "react-router-dom";
 
 const MAX_CHARACTERS = 80;
 
@@ -18,6 +19,11 @@ const BookCard = ({ data }) => {
     ? `${description.slice(0, MAX_CHARACTERS)}...`
     : description;
 
+  let navigate = useNavigate();
+  const handleRedirect = (id) => {
+    navigate(`${id}`);
+  };
+
   return (
     <SC.Container>
       <SC.Image src={image} />
@@ -30,7 +36,7 @@ const BookCard = ({ data }) => {
             <SC.ButtonWrapper onClick={() => handleAddToCart(id)}>
               <SVGIcon src={IconAddToCart} color="white" size="1.5rem" />
             </SC.ButtonWrapper>
-            <SC.ButtonWrapper onClick={() => console.log(id)}>
+            <SC.ButtonWrapper onClick={() => handleRedirect(id)}>
               <SVGIcon src={IconInfo} color="white" size="1.5rem" />
             </SC.ButtonWrapper>
           </div>

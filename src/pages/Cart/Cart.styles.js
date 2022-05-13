@@ -57,8 +57,12 @@ export const Item = styled.tr`
 
 export const Delete = styled(SVGIcon)`
   margin: auto;
+  transition: 0.2s;
+
   :hover {
     background-color: ${themes.colors.red[0]};
+
+    transition: 0.2s ease;
   }
 `;
 

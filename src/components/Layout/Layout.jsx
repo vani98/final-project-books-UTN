@@ -1,14 +1,13 @@
-import React from "react";
-import NavigationBar from "./NavigationBar";
+import Header from "./Header";
 import * as SC from "./Layout.styles";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
     <div>
-      <NavigationBar />
+      <Header />
       <SC.Container>{children}</SC.Container>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

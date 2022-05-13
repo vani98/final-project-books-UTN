@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Layout from "../../components/Layout";
 import { USER_CART } from "../../hooks/useAddToCart";
 import useApi from "../../hooks/useApi";
@@ -9,7 +10,9 @@ import Button from "./Button/Button";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const cartItems = JSON.parse(localStorage.getItem(USER_CART));
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem(USER_CART))
+  );
   const [books, isLoading] = useApi("/books.json");
   let bookCounter = 0;
   let priceCounter = 0;
@@ -19,10 +22,16 @@ const Cart = () => {
     navigate("/books");
   };
 
+  const handleDelete = (id) => {
+    const newCart = cartItems.filter((item) => item.id !== id);
+    setCartItems(newCart);
+    localStorage.setItem(USER_CART, JSON.stringify(newCart));
+  };
+
   return (
     <Layout>
       <SC.Container>
-        {cartItems ? (
+        {cartItems.length > 0 ? (
           <>
             <SC.Title>Products in Cart</SC.Title>
             {isLoading ? (
@@ -35,31 +44,40 @@ const Cart = () => {
                       <th></th>
                       <th>Product</th>
                       <th>Quantity</th>
+                      <th>Unit Price</th>
                       <th>Price</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     {(cartItems || []).map((item) => {
-                      const finalBook = books.find(
+                      const bookData = books.find(
                         (book) => book.id === item.id
                       );
-                      const itemPrice = finalBook.price * item.amount;
+                      const { price, image, title, id } = bookData;
+                      const itemPrice = price * item.amount;
                       bookCounter += item.amount;
                       priceCounter += itemPrice;
                       return (
-                        <SC.Item key={finalBook.id}>
+                        <SC.Item key={id}>
                           <td>
-                            <img src={finalBook.image} />
+                            <img src={image} />
                           </td>
-                          <td>{finalBook.title}</td>
+
+                          <td>{title}</td>
+
                           <td>{item.amount}</td>
+
+                          <td>{priceFormat(price)}</td>
+
                           <td>{priceFormat(itemPrice)}</td>
+
                           <td>
                             <SC.Delete
                               size="3rem"
                               color="black"
                               src={IconTrash}
+                              onClick={() => handleDelete(id)}
                             />
                           </td>
                         </SC.Item>
@@ -70,6 +88,7 @@ const Cart = () => {
                     <SC.Total>
                       <td colSpan={2}>TOTAL</td>
                       <td>{bookCounter}</td>
+                      <td />
                       <td>{priceFormat(priceCounter)}</td>
                     </SC.Total>
                   </tfoot>

@@ -5,6 +5,10 @@ import * as SC from "./ShoppingCart.styles";
 export const ShoppingCart = () => {
   const cart = JSON.parse(localStorage.getItem("USER_CART"));
 
+  // useEffect(() => {
+  //   console.log("hola");
+  // }, [localStorage]);
+
   const amount = cart?.reduce((counter, item) => {
     counter += item.amount;
     return counter;

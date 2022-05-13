@@ -2,7 +2,7 @@ import styled from "styled-components";
 import themes from "../../../../themes";
 
 export const Container = styled.div`
-  margin: 0 1rem;
+  margin: 0 3rem;
   position: relative;
 `;
 

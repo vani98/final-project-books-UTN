@@ -66,6 +66,12 @@ export const ButtonWrapper = styled.div`
   border-radius: 5rem;
   cursor: pointer;
   background-color: black;
+  transition: 0.5s;
+
+  :active {
+    background-color: ${themes.colors.grey[4]};
+    transition: 0s;
+  }
 `;
 
 export const ActionButtons = styled.div`
