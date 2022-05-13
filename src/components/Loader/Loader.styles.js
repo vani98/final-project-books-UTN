@@ -1,6 +1,13 @@
 import styled, { keyframes } from "styled-components";
 import SVGIcon from "../SVGIcon";
 
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+`;
+
 const rotate = keyframes`
   from {
     transform: rotate(0);

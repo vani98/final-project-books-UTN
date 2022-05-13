@@ -12,9 +12,7 @@ const Books = () => {
   return (
     <Layout>
       {isLoading ? (
-        <SC.LoaderWrapper>
-          <Loader />
-        </SC.LoaderWrapper>
+        <Loader />
       ) : (
         <>
           <SC.PageTitle>

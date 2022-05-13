@@ -38,12 +38,15 @@ export const Table = styled.table`
 
 export const Item = styled.tr`
   text-align: center;
+
   td {
     padding: 1.5rem 0;
   }
+
   :nth-child(odd) {
     background-color: ${themes.colors.grey[0]};
   }
+
   img {
     height: 9rem;
     width: 7rem;

@@ -1,21 +1,12 @@
 import styled from "styled-components";
 import themes from "../../themes";
 
-export const LoaderWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-`;
-
-export const PageTitle = styled.p`
+export const PageTitle = styled.h2`
   margin-bottom: 2rem;
   font-size: 4rem;
-  font-weight: 700;
   text-align: center;
   span {
     font-size: 4rem;
-    font-weight: 700;
     color: ${themes.colors.primary};
   }
 `;
