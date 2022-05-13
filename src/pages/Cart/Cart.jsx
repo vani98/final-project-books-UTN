@@ -31,7 +31,7 @@ const Cart = () => {
   return (
     <Layout>
       <SC.Container>
-        {cartItems.length > 0 ? (
+        {!!cartItems.length > 0 ? (
           <>
             <SC.Title>Products in Cart</SC.Title>
             {isLoading ? (
