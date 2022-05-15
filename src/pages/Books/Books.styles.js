@@ -9,12 +9,14 @@ export const PageTitle = styled.h2`
     font-size: 4rem;
     color: ${themes.colors.primary};
   }
+  
 `;
 
 export const PageSubTitle = styled.p`
   margin-bottom: 5rem;
   font-size: 3rem;
   text-align: center;
+ 
 `;
 
 export const BookContainer = styled.div`

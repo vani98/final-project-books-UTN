@@ -81,8 +81,5 @@ export const ActionButtons = styled.div`
 
   div {
     display: flex;
-
-    /* border: 1px solid red; */
-    /* justify-content: ; */
   }
 `;

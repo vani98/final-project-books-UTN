@@ -1,20 +1,14 @@
-import React from "react";
 import * as SC from "./BookCard.styles";
 import { priceFormat } from "../../../utils";
 import SVGIcon from "../../../components/SVGIcon";
 import { IconAddToCart, IconInfo } from "../../../assets/images";
-import useAddToCart, { USER_CART } from "../../../hooks/useAddToCart";
 import { useNavigate } from "react-router-dom";
+import useAddToCart from "../../../hooks/useAddToCart";
 
 const MAX_CHARACTERS = 80;
-
 const BookCard = ({ data }) => {
   const { image, title, price, id, description } = data;
-
-  const handleAddToCart = () => {
-    useAddToCart(USER_CART, id);
-  };
-
+  const { handleAddToCart } = useAddToCart(id);
   const shortDescription = !(description.lenght >= MAX_CHARACTERS)
     ? `${description.slice(0, MAX_CHARACTERS)}...`
     : description;

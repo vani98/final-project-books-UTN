@@ -6,7 +6,7 @@ import * as SC from "./Cart.styles";
 import Loader from "../../components/Loader";
 import { priceFormat } from "../../utils";
 import { IconTrash } from "../../assets/images";
-import Button from "./Button/Button";
+import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {

@@ -1,22 +1,26 @@
 export const USER_CART = "USER_CART";
 
-const useAddToCart = (key, value) => {
-  const previousCart = JSON.parse(localStorage.getItem(key));
-  let newCart;
+const useAddToCart = (id) => {
+  const handleAddToCart = (id) => {
+    const previousCart = JSON.parse(localStorage.getItem(USER_CART));
+    let newCart;
 
-  if (!previousCart) {
-    newCart = [{ id: value, amount: 1 }];
-  } else {
-    const existingItem = previousCart.findIndex((item) => item.id === value);
-    newCart = [...previousCart];
-
-    if (existingItem !== -1) {
-      previousCart[existingItem].amount++;
+    if (!previousCart) {
+      newCart = [{ id: id, amount: 1 }];
     } else {
-      newCart = [...previousCart, { id: value, amount: 1 }];
+      const existingItem = previousCart.findIndex((item) => item.id === id);
+      newCart = [...previousCart];
+
+      if (existingItem !== -1) {
+        previousCart[existingItem].amount++;
+      } else {
+        newCart = [...previousCart, { id: id, amount: 1 }];
+      }
     }
-  }
-  localStorage.setItem(key, JSON.stringify(newCart));
+    localStorage.setItem(USER_CART, JSON.stringify(newCart));
+  };
+
+  return { handleAddToCart };
 };
 
 export default useAddToCart;

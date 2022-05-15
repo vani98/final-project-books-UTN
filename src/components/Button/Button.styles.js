@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import themes from "../../../themes";
+import themes from "../../themes";
 
 export const Button = styled.button`
-  padding: 1.5rem 10rem;
+  padding: 1.5rem 9.5rem;
+  height: 6rem;
   font-size: 2rem;
   font-weight: ${themes.fontWeight[0]};
   border: none;

@@ -39,4 +39,11 @@ export const SearchResults = styled.div`
   font-size: 1rem;
   text-align: center;
   border-bottom: 2px solid ${themes.colors.grey[0]};
+ 
+`;
+export const BookFound = styled.p`   
+  cursor: pointer;
+    :hover{
+      color: ${themes.colors.primary};
+    }
 `;
