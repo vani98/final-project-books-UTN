@@ -27,34 +27,43 @@ const BookPage = () => {
                   <SC.Title>{bookFound.title}</SC.Title>
                   <div>
                     <SC.Tag>
-                      {bookFound !== undefined &&
-                        bookFound.genres.map((item) => {
-                          const bookData = genres?.find(
-                            (genre) => genre.id === item
-                          );
-                          return <p key={bookData.id}>{bookData.name}</p>;
-                        })}
+                      {bookFound.genres?.map((item) => {
+                        const genresData = genres.find(
+                          (genre) => genre.id == item
+                        );
+                        return (
+                          genresData && (
+                            <p key={genresData.id}>{genresData.name}</p>
+                          )
+                        );
+                      })}
                     </SC.Tag>
                     <p>{bookFound.description}</p>
-                    <p>
-                      <span>Author: </span>
-                      {bookFound.author}
-                    </p>
-                    <p>
-                      <span>Published: </span>
-                      {bookFound.published}
-                    </p>
-                    {bookFound.publishers.map((item) => {
-                      const bookData = publishers?.find(
-                        (publisher) => publisher.id === item
-                      );
-                      return (
-                        <p key={bookData.id}>
-                          <span>Publishers: </span>
-                          {bookData.name}
-                        </p>
-                      );
-                    })}
+                    <SC.Details>
+                      <div>
+                        <p>Author:</p>
+                        <p>{bookFound.author}</p>
+                      </div>
+                      <div>
+                        <p>Published:</p>
+                        <p>{bookFound.published}</p>
+                      </div>
+                      <div>
+                        <p>Publishers:</p>
+                        {bookFound.publishers?.map((item) => {
+                          const publishersData = publishers.find(
+                            (publisher) => publisher.id == item
+                          );
+                          return (
+                            publishersData && (
+                              <p key={publishersData.id}>
+                                {publishersData.name}
+                              </p>
+                            )
+                          );
+                        })}
+                      </div>
+                    </SC.Details>
                   </div>
                 </div>
               </SC.Container>

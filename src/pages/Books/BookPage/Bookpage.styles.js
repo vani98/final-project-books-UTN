@@ -3,24 +3,21 @@ import themes from "../../../themes";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
-  span {
-    color: ${themes.colors.primary};
-  }
   p {
     margin-bottom: 0.7rem;
+    font-size: 1.42rem;
   }
 `;
 
 export const Title = styled.h2`
   font-size: 3rem;
-  color: ${themes.colors.primary};
 `;
 
 export const Image = styled.img`
   height: 43rem;
-  width: 30rem;
+  min-width: 30rem;
   margin-right: 4rem;
 `;
 
@@ -35,6 +32,17 @@ export const Tag = styled.div`
     border-radius: 2rem;
     color: white;
     background-color: ${themes.colors.primary};
+  }
+`;
+
+export const Details = styled.div`
+  div {
+    display: flex;
+  }
+  div p:first-child {
+    padding: 0 0.5rem;
+    color: ${themes.colors.grey[2]};
+    border-left: 3px solid ${themes.colors.primary};
   }
 `;
 
