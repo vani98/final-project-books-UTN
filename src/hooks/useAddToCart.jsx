@@ -1,5 +1,4 @@
 export const USER_CART = "USER_CART";
-
 const useAddToCart = (id) => {
   const handleAddToCart = (id) => {
     const previousCart = JSON.parse(localStorage.getItem(USER_CART));

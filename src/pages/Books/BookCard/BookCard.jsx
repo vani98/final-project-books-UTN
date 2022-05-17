@@ -8,7 +8,7 @@ import useAddToCart from "../../../hooks/useAddToCart";
 const MAX_CHARACTERS = 80;
 const BookCard = ({ data }) => {
   const { image, title, price, id, description } = data;
-  const { handleAddToCart } = useAddToCart(id);
+  const { handleAddToCart, modalAddToCart } = useAddToCart(id);
   const shortDescription = !(description.lenght >= MAX_CHARACTERS)
     ? `${description.slice(0, MAX_CHARACTERS)}...`
     : description;
