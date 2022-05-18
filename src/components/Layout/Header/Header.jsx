@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 import { LOGGED_USER } from "../../../pages/Login/utils";
 
 const Header = () => {
-  const userValues = localStorage.getItem(LOGGED_USER);
-  console.log();
+  const userValues = JSON.parse(localStorage.getItem(LOGGED_USER));
+  const initial = !!userValues ? userValues.user.charAt(0) : "";
+
   return (
     <SC.Container>
       <Link to="/">
@@ -34,7 +35,11 @@ const Header = () => {
           <SVGIcon src={IconShoppingCart} color="black" size="2.9rem" />
         </SC.ToCart>
 
-        {!!userValues ? <SC.UserIcon>NA</SC.UserIcon> : <div>Login</div>}
+        {!!userValues ? (
+          <SC.UserIcon>{initial}</SC.UserIcon>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </SC.Navigation>
     </SC.Container>
   );

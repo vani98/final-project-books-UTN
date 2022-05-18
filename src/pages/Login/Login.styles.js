@@ -28,17 +28,23 @@ export const LoginForm = styled.form`
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
-  p {
-    color: ${themes.colors.grey[4]};
-    cursor: pointer;
-    text-decoration: underline;
-    :hover {
-      color: ${themes.colors.primary};
-    }
-  }
 `;
 
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const Forgotten = styled.p`
+  color: ${themes.colors.grey[4]};
+  cursor: pointer;
+  text-decoration: underline;
+  :hover {
+    color: ${themes.colors.primary};
+  }
+`;
+
+export const Error = styled.span`
+  margin: 0.5rem 0;
+  color: ${themes.colors.red[0]};
 `;

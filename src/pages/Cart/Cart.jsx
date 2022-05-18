@@ -8,14 +8,33 @@ import { priceFormat } from "../../utils";
 import { IconTrash } from "../../assets/images";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
+import { LOGGED_USER } from "../Login/utils";
+import PopUp from "../../components/PopUp/PopUp";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem(USER_CART))
   );
   const [books, isLoading] = useApi("/books.json");
+
+  const [showPopUp, setShowPopUp] = useState(false);
+
   let bookCounter = 0;
   let priceCounter = 0;
+  const userValues = localStorage.getItem(LOGGED_USER);
+
+  const handleSubmit = () => {
+    if (!!userValues) {
+      setShowPopUp(true);
+      setTimeout(() => {
+        setShowPopUp(false);
+        localStorage.removeItem(USER_CART);
+        document.location.reload(true);
+      }, 1000);
+    } else {
+      navigate("/login");
+    }
+  };
 
   let navigate = useNavigate();
   const handleRedirect = () => {
@@ -31,7 +50,7 @@ const Cart = () => {
   return (
     <Layout>
       <SC.Container>
-        {!!cartItems.length > 0 ? (
+        {(cartItems || []).length > 0 ? (
           <>
             <SC.Title>Products in Cart</SC.Title>
             {isLoading ? (
@@ -94,7 +113,7 @@ const Cart = () => {
                   </tfoot>
                 </SC.Table>
                 <SC.ButtonContainer>
-                  <Button>BUY NOW</Button>
+                  <Button onClick={handleSubmit}>BUY NOW</Button>
                 </SC.ButtonContainer>
               </>
             )}
@@ -106,6 +125,11 @@ const Cart = () => {
           </SC.NothingOnCart>
         )}
       </SC.Container>
+      {showPopUp && (
+        <PopUp>
+          <SC.PurchasedText>Successfully Purchased</SC.PurchasedText>
+        </PopUp>
+      )}
     </Layout>
   );
 };

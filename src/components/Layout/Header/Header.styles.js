@@ -53,4 +53,6 @@ export const UserIcon = styled.div`
   background-color: ${themes.colors.grey[1]};
   /* color: white; */
   border-radius: 50%;
+
+  text-transform: capitalize;
 `;

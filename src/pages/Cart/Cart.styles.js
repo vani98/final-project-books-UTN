@@ -6,6 +6,11 @@ export const Container = styled.div`
   min-height: 70vh;
 `;
 
+export const PurchasedText = styled.div`
+  color: ${themes.colors.primary};
+  font-size: 2rem;
+`;
+
 export const Title = styled.h2`
   font-size: 3rem;
   margin-bottom: 2rem;
