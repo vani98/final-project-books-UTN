@@ -15,7 +15,7 @@ const BookCard = ({ data }) => {
 
   let navigate = useNavigate();
   const handleRedirect = (id) => {
-    navigate(`${id}`);
+    navigate(`/books/${id}`);
   };
 
   return (

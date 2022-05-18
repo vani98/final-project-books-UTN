@@ -26,7 +26,7 @@ export const SearchButton = styled.img`
   right: 2rem;
   margin: auto;
   height: 2rem;
-  cursor: pointer;
+  color: ${themes.colors.grey[0]}; ;
 `;
 
 export const SearchResults = styled.div`
@@ -39,11 +39,10 @@ export const SearchResults = styled.div`
   font-size: 1rem;
   text-align: center;
   border-bottom: 2px solid ${themes.colors.grey[0]};
- 
 `;
-export const BookFound = styled.p`   
+export const BookFound = styled.p`
   cursor: pointer;
-    :hover{
-      color: ${themes.colors.primary};
-    }
+  :hover {
+    color: ${themes.colors.primary};
+  }
 `;

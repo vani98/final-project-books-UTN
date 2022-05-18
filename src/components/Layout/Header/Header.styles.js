@@ -7,7 +7,7 @@ export const Container = styled.header`
   padding: 0 2rem;
   align-items: center;
   justify-content: space-between;
-  height: 8rem;
+  height: 8.5rem;
   border-bottom: 2px solid ${themes.colors.grey[0]};
 `;
 
@@ -37,4 +37,8 @@ export const Navigation = styled.div`
     list-style: none;
     display: flex;
   }
+`;
+
+export const ToCart = styled(Link)`
+  margin-left: 1.5rem;
 `;

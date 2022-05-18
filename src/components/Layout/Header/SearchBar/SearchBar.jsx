@@ -29,6 +29,27 @@ const SearchBar = () => {
     setSearchBoxValue("");
   };
 
+  const handleSearch = () => {
+    {
+      searchBoxValue && (
+        <SC.SearchResults>
+          {filteredByInput.length > 0 ? (
+            filteredByInput.map((book) => (
+              <SC.BookFound
+                key={book.id}
+                onClick={() => handleRedirect(book.id)}
+              >
+                {book.title}
+              </SC.BookFound>
+            ))
+          ) : (
+            <p>Not found</p>
+          )}
+        </SC.SearchResults>
+      );
+    }
+  };
+
   return (
     <>
       <SC.SearchContainer>
@@ -37,7 +58,10 @@ const SearchBar = () => {
           onChange={searchChange}
           value={searchBoxValue}
         />
-        <SC.SearchButton src={IconSearch}></SC.SearchButton>
+        <SC.SearchButton
+          src={IconSearch}
+          onClick={handleSearch}
+        ></SC.SearchButton>
       </SC.SearchContainer>
       {searchBoxValue && (
         <SC.SearchResults>

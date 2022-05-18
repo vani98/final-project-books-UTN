@@ -16,6 +16,8 @@ import IconMastercard from "./IconMastercard.svg";
 import IconPaypal from "./IconPaypal.svg";
 import IconAmericanexpress from "./IconAmericanexpress.svg";
 import IconTrash from "./IconTrash.svg";
+import IconBook from "./IconBook.svg";
+import IconPublisher from "./IconPublisher.svg";
 
 export {
   IconLogo,
@@ -36,4 +38,6 @@ export {
   IconPaypal,
   IconAmericanexpress,
   IconTrash,
+  IconBook,
+  IconPublisher,
 };
