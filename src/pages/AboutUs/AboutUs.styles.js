@@ -33,3 +33,60 @@ export const Description = styled.p`
     color: ${themes.colors.primary};
   }
 `;
+
+export const ContactForm = styled.div`
+  padding: 5rem 10rem;
+  border: 1px solid ${themes.colors.grey[1]};
+  /* width: 85%; */
+  margin-top: 4rem;
+  h2 {
+    text-align: left;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  input,
+  label {
+    margin-bottom: 1rem;
+  }
+  label {
+    font-size: 1.9rem;
+  }
+  input {
+    border: none;
+    border-bottom: 2px solid ${themes.colors.grey[1]};
+    padding: 0.8rem 0;
+    background-color: transparent;
+    :focus {
+      outline: none;
+      border-bottom: 2px solid ${themes.colors.primary};
+    }
+  }
+  textarea {
+    padding: 0.2rem;
+    /* margin-bottom: 4rem; */
+    border: 2px solid ${themes.colors.grey[1]};
+    height: 150px;
+    :focus {
+      outline: none;
+      border: 2px solid ${themes.colors.primary};
+    }
+  }
+
+  button {
+    margin-top: 4rem;
+  }
+`;
+
+export const Error = styled.p`
+  margin: 0.5rem 0;
+  color: ${themes.colors.red[0]};
+`;
+
+export const Sent = styled.p`
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: ${themes.colors.green[0]};
+`;

@@ -3,8 +3,54 @@ import Layout from "../../components/Layout/Layout";
 import Loader from "../../components/Loader";
 import EmployeePhotoInfo from "./EmployeePhotoInfo";
 import useApi from "../../hooks/useApi";
+import { useFormik } from "formik";
+import Button from "../../components/Button";
+import { useState } from "react";
+
+const validate = (values) => {
+  const errors = {};
+  const regEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+  if (!values.email) {
+    errors.email = "Required";
+  } else if (!regEx.test(values.email)) {
+    errors.email = "Invalid email address";
+  }
+  if (!values.subject) {
+    errors.subject = "Required";
+  } else if (values.subject.length <= 2) {
+    errors.subject = "The message is too short";
+  } else if (values.subject.length >= 50) {
+    errors.subject = "The message is too long";
+  }
+  if (!values.message) {
+    errors.message = "Required";
+  } else if (values.message.length <= 10) {
+    errors.message = "The message is too short";
+  } else if (values.message.length >= 150) {
+    errors.message = "The message is too long";
+  }
+
+  return errors;
+};
+
 const AboutUs = () => {
+  const [formSend, setFormSend] = useState(false);
   const [teamData, isLoading] = useApi("/team.json");
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      subject: "",
+      message: "",
+    },
+    validate,
+    onSubmit: (values, { resetForm }) => {
+      resetForm();
+      setFormSend(true);
+      setTimeout(() => setFormSend(false), 5000);
+    },
+  });
   return (
     <Layout>
       {isLoading ? (
@@ -30,10 +76,42 @@ const AboutUs = () => {
             are waiting <span>for you</span> at our branches or on our
             telephone/whatsapp channels.
           </SC.Description>
-          <h2>
-            Contact <span>Us</span>
-          </h2>
-          <form></form>
+
+          <SC.ContactForm>
+            <h2>
+              Contact <span>Us</span>
+            </h2>
+            <form onSubmit={formik.handleSubmit}>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                placeholder="email@example.com"
+                {...formik.getFieldProps("email")}
+              />
+              {formik.touched.email && formik.errors.email && (
+                <SC.Error>{formik.errors.email}</SC.Error>
+              )}
+              <label htmlFor="subject">Subject</label>
+              <input
+                type="text"
+                placeholder="Enter your subject"
+                {...formik.getFieldProps("subject")}
+              />
+              {formik.touched.subject && formik.errors.subject && (
+                <SC.Error>{formik.errors.subject}</SC.Error>
+              )}
+              <label htmlFor="message">Message</label>
+              <textarea
+                placeholder="Leave a message..."
+                {...formik.getFieldProps("message")}
+              ></textarea>
+              {formik.touched.message && formik.errors.message && (
+                <SC.Error>{formik.errors.message}</SC.Error>
+              )}
+              <Button type="submit">Send Email</Button>
+              {formSend && <SC.Sent>Email sent</SC.Sent>}
+            </form>
+          </SC.ContactForm>
         </SC.Container>
       )}
     </Layout>
