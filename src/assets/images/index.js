@@ -18,6 +18,7 @@ import IconAmericanexpress from "./IconAmericanexpress.svg";
 import IconTrash from "./IconTrash.svg";
 import IconBook from "./IconBook.svg";
 import IconPublisher from "./IconPublisher.svg";
+import IconToTop from "./IconToTop.svg";
 
 export {
   IconLogo,
@@ -40,4 +41,5 @@ export {
   IconTrash,
   IconBook,
   IconPublisher,
+  IconToTop,
 };
