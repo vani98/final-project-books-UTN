@@ -16,7 +16,7 @@ const Editorials = () => {
         <>
           <SC.PageTitle>
             Find your favorite
-            <span> publisher</span>
+            <span> publisher</span> and visit his page
           </SC.PageTitle>
           <SC.EditorialContainer>
             {editorialData.map((editorial) => (

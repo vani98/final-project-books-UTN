@@ -1,11 +1,12 @@
 import * as SC from "./Editorial.styles";
 
 const Editorial = ({ data }) => {
-  const { image } = data;
-
+  const { image, link } = data;
   return (
     <>
-      <SC.EditorialImg src={image} alt="editorial" />
+      <SC.Container href={link} target="_blank">
+        <img src={image} alt="editorial" />
+      </SC.Container>
     </>
   );
 };
