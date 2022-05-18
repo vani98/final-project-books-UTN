@@ -4,8 +4,11 @@ import SearchBar from "./SearchBar";
 import SVGIcon from "../../SVGIcon";
 import themes from "../../../themes";
 import { Link } from "react-router-dom";
+import { LOGGED_USER } from "../../../pages/Login/utils";
 
 const Header = () => {
+  const userValues = localStorage.getItem(LOGGED_USER);
+  console.log();
   return (
     <SC.Container>
       <Link to="/">
@@ -30,6 +33,8 @@ const Header = () => {
         <SC.ToCart to="/cart">
           <SVGIcon src={IconShoppingCart} color="black" size="2.9rem" />
         </SC.ToCart>
+
+        {!!userValues ? <SC.UserIcon>NA</SC.UserIcon> : <div>Login</div>}
       </SC.Navigation>
     </SC.Container>
   );

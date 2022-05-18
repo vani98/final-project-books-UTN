@@ -42,3 +42,15 @@ export const Navigation = styled.div`
 export const ToCart = styled(Link)`
   margin-left: 1.5rem;
 `;
+
+export const UserIcon = styled.div`
+  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: ${themes.colors.grey[1]};
+  /* color: white; */
+  border-radius: 50%;
+`;
