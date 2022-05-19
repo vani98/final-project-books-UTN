@@ -6,9 +6,10 @@ import Loader from "../../../components/Loader";
 import { priceFormat } from "../../../utils";
 import { Button } from "../../../components/Button/Button.styles";
 import useAddToCart from "../../../hooks/useAddToCart";
+import PopUp from "../../../components/PopUp/PopUp";
 const BookPage = () => {
   const { bookId } = useParams();
-  const { handleAddToCart } = useAddToCart();
+  const { handleAddToCart, showPopUp } = useAddToCart();
   const [book, isLoading] = useApi("/books.json");
   const [genres] = useApi("/genres.json");
   const [publishers] = useApi("/publishers.json");
@@ -74,6 +75,11 @@ const BookPage = () => {
                 </Button>
                 <p>{priceFormat(bookFound.price)}</p>
               </SC.Action>
+              {showPopUp && (
+                <PopUp>
+                  <p>Added to cart</p>
+                </PopUp>
+              )}
             </>
           ) : (
             <p>Not found</p>

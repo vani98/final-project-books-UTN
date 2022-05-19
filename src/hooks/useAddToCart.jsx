@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 export const USER_CART = "USER_CART";
 const useAddToCart = (id) => {
+  const [showPopUp, setShowPopUp] = useState(false);
+
   const handleAddToCart = (id) => {
     const previousCart = JSON.parse(localStorage.getItem(USER_CART));
     let newCart;
@@ -9,7 +13,6 @@ const useAddToCart = (id) => {
     } else {
       const existingItem = previousCart.findIndex((item) => item.id === id);
       newCart = [...previousCart];
-
       if (existingItem !== -1) {
         previousCart[existingItem].amount++;
       } else {
@@ -17,9 +20,13 @@ const useAddToCart = (id) => {
       }
     }
     localStorage.setItem(USER_CART, JSON.stringify(newCart));
+    setShowPopUp(true);
+    setTimeout(() => {
+      setShowPopUp(false);
+    }, 480);
   };
 
-  return { handleAddToCart };
+  return { handleAddToCart, showPopUp };
 };
 
 export default useAddToCart;

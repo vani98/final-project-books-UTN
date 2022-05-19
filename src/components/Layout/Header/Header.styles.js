@@ -51,21 +51,30 @@ export const Navigation = styled.ul`
   list-style: none;
   display: flex;
   @media (${themes.devices.tablet}) {
-    padding: 2rem 0;
     display: ${(props) => props.display};
     position: absolute;
-    top: 9rem;
+    top: 8.5rem;
     right: 0;
     flex-direction: column;
-    align-items: center;
     width: 100%;
-    background-color: #fff;
     border-bottom: 2px solid ${themes.colors.grey[0]};
-    a {
-      font-size: 2rem;
+    background-color: white;
+    li {
+      width: 100%;
     }
-    li:not(:last-child) {
-      margin-bottom: 2rem;
+    a {
+      display: block;
+      padding: 1rem 0;
+      text-align: center;
+      width: 100%;
+      font-size: 2rem;
+      :hover {
+        background-color: ${themes.colors.primary};
+        color: white;
+      }
+      :active {
+        background-color: ${themes.colors.orange[1]};
+      }
     }
   }
 `;

@@ -3,15 +3,22 @@ import themes from "../../themes";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
   justify-content: center;
   position: fixed;
-  color: ${themes.colors.primary};
-  min-width: 24rem;
-  top: 6.5rem;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 19rem;
+  width: 25rem;
+  padding: 2rem;
+  text-align: center;
+  color: ${themes.colors.primary};
   background-color: #fff;
   border-radius: 1rem;
-  padding: 1rem 2rem;
-  border: 1px solid ${themes.colors.grey[0]};
+  z-index: 100;
+  border: 4px solid ${themes.colors.grey[0]};
+  box-shadow: 0px 0px 73px 0px rgba(0, 0, 0, 0.15);
 `;

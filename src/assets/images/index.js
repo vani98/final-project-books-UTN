@@ -21,6 +21,7 @@ import IconPublisher from "./IconPublisher.svg";
 import IconToTop from "./IconToTop.svg";
 import IconLogin from "./IconLogin.svg";
 import IconMenu from "./IconMenu.svg";
+import IconSmile from "./IconSmile.svg";
 
 export {
   IconLogo,
@@ -46,4 +47,5 @@ export {
   IconToTop,
   IconLogin,
   IconMenu,
+  IconSmile,
 };
