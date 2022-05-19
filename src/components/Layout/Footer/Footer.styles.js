@@ -13,50 +13,46 @@ export const FooterTop = styled.div`
   border-bottom: 1px solid ${themes.colors.grey[0]};
   display: flex;
   justify-content: space-between;
-  padding: 3rem 7rem;
+  padding: 5rem 7rem;
   @media (${themes.devices.laptop}) {
     text-align: center;
     flex-direction: column;
     align-items: center;
-    > * {
-      margin: 2rem;
-    }
+    padding: 2rem 0;
+    gap: 3rem;
   }
 `;
 
 export const Title = styled.h2`
   font-size: 2rem;
   margin-bottom: 4rem;
+
+  @media (${themes.devices.laptop}) {
+    margin-bottom: 2.5rem;
+  }
 `;
 
 export const Contact = styled.div`
-  p {
-    margin: 0 0 2rem 2rem;
-  }
   div {
+    margin: 0.5rem 0;
     display: flex;
-  }
-  @media (${themes.devices.laptop}) {
-    div {
-      margin-right: 2rem;
-    }
-    p {
-      margin: auto;
-    }
+    align-items: center;
+    gap: 2rem;
   }
 `;
 
 export const Icon = styled.img`
-  height: 4rem;
+  height: 4.5rem;
   :hover {
     opacity: 90%;
   }
 `;
 
 export const SocialMedia = styled.div`
-  > div {
+  text-align: center;
+  div {
     display: flex;
-    justify-content: space-between;
+    gap: 3rem;
   }
   a {
     cursor: pointer;
@@ -66,6 +62,7 @@ export const SocialMedia = styled.div`
 export const Payment = styled.div`
   div {
     display: grid;
+    gap: 1rem;
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -76,10 +73,12 @@ export const FooterBottom = styled.div`
   align-items: center;
   padding: 1rem 2rem;
   background-color: ${themes.colors.grey[3]};
-
   a {
     color: black;
     text-decoration: none;
+    :hover {
+      color: ${themes.colors.primary};
+    }
   }
   @media (${themes.devices.laptop}) {
     flex-direction: column;
@@ -91,18 +90,9 @@ export const FooterBottom = styled.div`
   }
 `;
 
-export const Copy = styled.a`
-  :hover {
-    color: ${themes.colors.orange[1]};
-  }
-`;
-
 export const Navigation = styled.div`
   a {
     margin-left: 4rem;
-  }
-  a:hover {
-    opacity: 60%;
   }
 
   @media (${themes.devices.mobileL}) {
@@ -110,6 +100,4 @@ export const Navigation = styled.div`
       margin-left: 1.7rem;
     }
   }
-  /* a {
-    } */
 `;

@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   position: fixed;
   color: ${themes.colors.primary};
-  width: 30vw;
+  min-width: 24rem;
   top: 6.5rem;
   left: 50%;
   transform: translateX(-50%);

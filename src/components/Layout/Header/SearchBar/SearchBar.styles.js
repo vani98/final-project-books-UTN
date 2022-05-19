@@ -14,14 +14,33 @@ export const SearchInput = styled.input`
   font-size: 1.3rem;
   font-style: italic;
   border: 2px solid ${themes.colors.grey[0]};
-
   :focus {
     outline: none;
   }
   @media (${themes.devices.laptop}) {
+    height: 3.5rem;
     width: 19rem;
     font-size: 1rem;
     padding: 0rem 1.5rem;
+  }
+  @media (${themes.devices.tablet}) {
+    height: 3.2rem;
+    width: 18rem;
+  }
+  @media (${themes.devices.mobileL}) {
+    height: 2.9rem;
+    width: 14.2rem;
+    padding: 0rem 0.9rem;
+    font-size: 0.8rem;
+  }
+  @media (${themes.devices.mobileM}) {
+    font-size: 0.7rem;
+    width: 13rem;
+  }
+  @media (${themes.devices.mobileS}) {
+    font-size: 0.64rem;
+    width: 12.1rem;
+    height: 2.7rem;
   }
 `;
 export const SearchButton = styled.img`
@@ -34,6 +53,10 @@ export const SearchButton = styled.img`
   color: ${themes.colors.grey[0]};
   @media (${themes.devices.laptop}) {
     height: 1.5rem;
+  }
+  @media (${themes.devices.tablet}) {
+    height: 1rem;
+    right: 1.2rem;
   }
 `;
 

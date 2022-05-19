@@ -4,15 +4,24 @@ import themes from "../../themes";
 export const Welcome = styled.div`
   display: flex;
   align-items: center;
-  height: 95vh;
+  height: 60rem;
   img {
     width: 40rem;
     margin-left: 14rem;
   }
   @media (${themes.devices.laptop}) {
     img {
-      width: 30rem;
       margin-left: 3rem;
+    }
+  }
+  @media (${themes.devices.tablet}) {
+    img {
+      width: 33rem;
+    }
+  }
+  @media (${themes.devices.mobileL}) {
+    img {
+      width: 25rem;
     }
   }
 

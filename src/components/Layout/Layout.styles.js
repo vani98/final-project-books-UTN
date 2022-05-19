@@ -1,8 +1,15 @@
 import styled from "styled-components";
 import themes from "../../themes";
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 export const Container = styled.div`
   padding: 5rem 5%;
+  flex: 1;
 `;
 
 export const ToTop = styled.a`

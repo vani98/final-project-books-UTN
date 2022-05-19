@@ -20,6 +20,7 @@ import IconBook from "./IconBook.svg";
 import IconPublisher from "./IconPublisher.svg";
 import IconToTop from "./IconToTop.svg";
 import IconLogin from "./IconLogin.svg";
+import IconMenu from "./IconMenu.svg";
 
 export {
   IconLogo,
@@ -44,4 +45,5 @@ export {
   IconPublisher,
   IconToTop,
   IconLogin,
+  IconMenu,
 };

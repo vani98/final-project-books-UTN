@@ -1,5 +1,10 @@
 import * as SC from "./Header.styles";
-import { IconLogo, IconShoppingCart, IconLogin } from "../../../assets/images";
+import {
+  IconLogo,
+  IconShoppingCart,
+  IconLogin,
+  IconMenu,
+} from "../../../assets/images";
 import SearchBar from "./SearchBar";
 import SVGIcon from "../../SVGIcon";
 import themes from "../../../themes";
@@ -9,6 +14,7 @@ import { useState } from "react";
 
 const Header = () => {
   const [isSettingOpen, setIsSettingOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState("none");
   const userValues = JSON.parse(localStorage.getItem(LOGGED_USER));
   const initial = !!userValues && userValues.user.charAt(0);
 
@@ -18,14 +24,21 @@ const Header = () => {
   const handleLogOut = () => {
     localStorage.removeItem(LOGGED_USER);
   };
+  const handleMenuClick = () => {
+    menuOpen == "none" ? setMenuOpen("flex") : setMenuOpen("none");
+  };
 
   return (
-    <SC.Container>
+    <SC.Wrapper>
       <Link to="/">
-        <SVGIcon src={IconLogo} color={themes.colors.primary} size="6rem" />
+        <SC.LogoCompany
+          src={IconLogo}
+          color={themes.colors.primary}
+          size="6rem"
+        />
       </Link>
-      <SC.Navigation>
-        <ul>
+      <SC.Container>
+        <SC.Navigation display={menuOpen}>
           <li>
             <SC.NavLink to="/">Home</SC.NavLink>
           </li>
@@ -36,19 +49,14 @@ const Header = () => {
             <SC.NavLink to="/editorials">Editorials</SC.NavLink>
           </li>
           <li>
-            <SC.NavLink to="/about-us">About Us</SC.NavLink>
+            <SC.NavLink to="/about-us">About us</SC.NavLink>
           </li>
-        </ul>
+        </SC.Navigation>
+
         <SearchBar />
         <SC.ToCart to="/cart">
-          <SVGIcon
-            src={IconShoppingCart}
-            color="black"
-            size="2.9rem"
-            hoverBgColor={themes.colors.primary}
-          />
+          <SVGIcon src={IconShoppingCart} color="black" size="2.9rem" />
         </SC.ToCart>
-
         {!!userValues ? (
           <>
             <SC.UserIcon onClick={handleUserSettings}>{initial}</SC.UserIcon>
@@ -67,17 +75,18 @@ const Header = () => {
             )}
           </>
         ) : (
-          <SC.LoginLink to="/login">
-            <SVGIcon
-              src={IconLogin}
-              color="black"
-              size="2.9rem"
-              hoverBgColor={themes.colors.primary}
-            />
-          </SC.LoginLink>
+          <SC.LoginIcon to="/login">
+            <SVGIcon src={IconLogin} color="black" size="2.9rem" />
+          </SC.LoginIcon>
         )}
-      </SC.Navigation>
-    </SC.Container>
+        <SC.Menu
+          src={IconMenu}
+          color="black"
+          size="3.2rem"
+          onClick={handleMenuClick}
+        ></SC.Menu>
+      </SC.Container>
+    </SC.Wrapper>
   );
 };
 

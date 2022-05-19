@@ -58,12 +58,12 @@ const Footer = () => {
         </SC.Payment>
       </SC.FooterTop>
       <SC.FooterBottom>
-        <SC.Copy
+        <a
           href="https://www.linkedin.com/in/carmen-vanina-ari%C3%B1o/"
           target="_blank"
         >
           © 2022 Vanina Ariño
-        </SC.Copy>
+        </a>
         <SC.Navigation>
           <Link to="/">Home</Link>
           <Link to="/books">Books</Link>

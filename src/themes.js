@@ -10,7 +10,8 @@ const themes = {
   },
   fontWeight: ["700"],
   devices: {
-    // mobileS: "max-width: 320px",
+    mobileS: "max-width: 320px",
+    mobileM: "max-width: 375px",
     mobileL: "max-width: 425px",
     tablet: "max-width: 768px",
     laptop: "max-width: 1000px",

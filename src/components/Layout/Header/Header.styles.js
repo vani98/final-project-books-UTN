@@ -1,19 +1,29 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import themes from "../../../themes";
+import SVGIcon from "../../SVGIcon";
 
-export const Container = styled.header`
+export const Wrapper = styled.header`
   display: flex;
   padding: 0 2rem;
   align-items: center;
   justify-content: space-between;
   height: 8.5rem;
   border-bottom: 2px solid ${themes.colors.grey[0]};
+  @media (${themes.devices.mobileM}) {
+    padding: 0 1rem;
+  }
 `;
 
-export const List = styled.ul`
-  display: flex;
-  list-style: none;
+export const LogoCompany = styled(SVGIcon)`
+  @media (${themes.devices.tablet}) {
+    height: 5rem;
+    width: 5rem;
+  }
+  @media (${themes.devices.mobileL}) {
+    height: 4rem;
+    width: 4rem;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -32,18 +42,48 @@ export const NavLink = styled(Link)`
   }
 `;
 
-export const Navigation = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
+`;
 
-  ul {
-    list-style: none;
-    display: flex;
+export const Navigation = styled.ul`
+  list-style: none;
+  display: flex;
+  @media (${themes.devices.tablet}) {
+    padding: 2rem 0;
+    display: ${(props) => props.display};
+    position: absolute;
+    top: 9rem;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 2px solid ${themes.colors.grey[0]};
+    a {
+      font-size: 2rem;
+    }
+    li:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 `;
 
 export const ToCart = styled(Link)`
   margin-left: 1.5rem;
+  @media (${themes.devices.tablet}) {
+    div {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+  @media (${themes.devices.mobileL}) {
+    div {
+      height: 2.2rem;
+      width: 2.2rem;
+    }
+  }
 `;
 
 export const UserIcon = styled.p`
@@ -62,10 +102,32 @@ export const UserIcon = styled.p`
   :hover {
     background-color: ${themes.colors.orange[1]};
   }
+  @media (${themes.devices.tablet}) {
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-right: 2rem;
+  }
+  @media (${themes.devices.mobileL}) {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2rem;
+  }
 `;
 
-export const LoginLink = styled(Link)`
-  margin: 2rem;
+export const LoginIcon = styled(Link)`
+  margin: 0 2rem;
+  @media (${themes.devices.tablet}) {
+    div {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+  @media (${themes.devices.mobileL}) {
+    div {
+      height: 2.2rem;
+      width: 2.2rem;
+    }
+  }
 `;
 
 export const UserSettigs = styled.div`
@@ -96,6 +158,9 @@ export const UserSettigs = styled.div`
       color: ${themes.colors.orange[1]};
     }
   }
+  @media (${themes.devices.tablet}) {
+    right: 6rem;
+  }
 `;
 
 export const Triangle = styled.div`
@@ -105,4 +170,18 @@ export const Triangle = styled.div`
   border-right: 1rem solid transparent;
   border-bottom: 1rem solid ${themes.colors.grey[0]};
   border-left: 1rem solid transparent;
+  @media (${themes.devices.tablet}) {
+    right: 7rem;
+  }
+`;
+
+export const Menu = styled(SVGIcon)`
+  display: none;
+  @media (${themes.devices.tablet}) {
+    display: inline-block;
+  }
+  @media (${themes.devices.mobileL}) {
+    height: 3rem;
+    width: 3rem;
+  }
 `;
