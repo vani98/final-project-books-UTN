@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   padding: 5rem 5%;
   flex: 1;
+
   *::selection {
     background: ${themes.colors.primary};
     color: white;

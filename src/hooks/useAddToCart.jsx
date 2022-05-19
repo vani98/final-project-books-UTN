@@ -23,7 +23,7 @@ const useAddToCart = (id) => {
     setShowPopUp(true);
     setTimeout(() => {
       setShowPopUp(false);
-    }, 480);
+    }, 1000);
   };
 
   return { handleAddToCart, showPopUp };

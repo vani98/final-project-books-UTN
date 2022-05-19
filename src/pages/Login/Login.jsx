@@ -4,10 +4,17 @@ import Button from "../../components/Button";
 import * as SC from "./Login.styles";
 import { loginUser } from "./utils";
 
+const USER_MAX_LENGHT = 16;
+const USER_MIN_LENGHT = 3;
+
 const validate = (values) => {
   const errors = {};
   if (!values.user) {
     errors.user = "Required";
+  } else if (values.user.length > USER_MAX_LENGHT) {
+    errors.user = "Too long";
+  } else if (values.user.length < USER_MIN_LENGHT) {
+    errors.user = "Too short";
   }
   if (!values.password) {
     errors.password = "Required";

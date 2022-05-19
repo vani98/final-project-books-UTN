@@ -3,18 +3,6 @@ import styled from "styled-components";
 import themes from "../../../themes";
 import SVGIcon from "../../SVGIcon";
 
-export const Wrapper = styled.header`
-  display: flex;
-  padding: 0 2rem;
-  align-items: center;
-  justify-content: space-between;
-  height: 8.5rem;
-  border-bottom: 2px solid ${themes.colors.grey[0]};
-  @media (${themes.devices.mobileM}) {
-    padding: 0 1rem;
-  }
-`;
-
 export const LogoCompany = styled(SVGIcon)`
   @media (${themes.devices.tablet}) {
     height: 5rem;
@@ -50,15 +38,20 @@ export const Container = styled.div`
 export const Navigation = styled.ul`
   list-style: none;
   display: flex;
+  transition: ease 0.5;
+
   @media (${themes.devices.tablet}) {
-    display: ${(props) => props.display};
+    /* display: ${(props) => (props.showMenu ? "flex" : "none")}; */
     position: absolute;
     top: 8.5rem;
     right: 0;
+    height: ${(props) => (props.showMenu ? "auto" : "0")};
+    overflow: hidden;
     flex-direction: column;
     width: 100%;
     border-bottom: 2px solid ${themes.colors.grey[0]};
     background-color: white;
+    transition: ease 0.5;
     li {
       width: 100%;
     }
@@ -145,11 +138,17 @@ export const UserSettigs = styled.div`
   position: absolute;
   top: 7.9rem;
   right: 1.4rem;
-  padding: 2rem 3rem;
-  text-align: center;
+  padding: 1.5rem 2rem;
+  max-width: 22rem;
+  text-align: left;
   border-radius: 0.5rem;
   background-color: ${themes.colors.grey[0]};
+  p {
+    display: flex;
+    flex-wrap: wrap;
+  }
   span {
+    margin-left: 0.3rem;
     color: ${themes.colors.primary};
     text-transform: uppercase;
   }
@@ -192,5 +191,17 @@ export const Menu = styled(SVGIcon)`
   @media (${themes.devices.mobileL}) {
     height: 3rem;
     width: 3rem;
+  }
+`;
+
+export const Wrapper = styled.header`
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 8.5rem;
+  border-bottom: 2px solid ${themes.colors.grey[0]};
+  @media (${themes.devices.mobileM}) {
+    padding: 0 1rem;
   }
 `;

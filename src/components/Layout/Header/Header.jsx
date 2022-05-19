@@ -14,7 +14,7 @@ import { useState } from "react";
 
 const Header = () => {
   const [isSettingOpen, setIsSettingOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState("none");
+  const [menuOpen, setMenuOpen] = useState(false);
   const userValues = JSON.parse(localStorage.getItem(LOGGED_USER));
   const initial = !!userValues && userValues.user.charAt(0);
 
@@ -25,7 +25,7 @@ const Header = () => {
     localStorage.removeItem(LOGGED_USER);
   };
   const handleMenuClick = () => {
-    menuOpen == "none" ? setMenuOpen("flex") : setMenuOpen("none");
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -38,7 +38,7 @@ const Header = () => {
         />
       </Link>
       <SC.Container>
-        <SC.Navigation display={menuOpen}>
+        <SC.Navigation showMenu={menuOpen}>
           <li>
             <SC.NavLink to="/">Home</SC.NavLink>
           </li>
@@ -64,10 +64,10 @@ const Header = () => {
               <>
                 <SC.UserSettigs>
                   <p>
-                    Hello <span>{!!userValues && userValues.user}</span>!
+                    Singed in as: <span>{!!userValues && userValues.user}</span>
                   </p>
                   <Link to="/" onClick={handleLogOut}>
-                    Log out?
+                    Sign out
                   </Link>
                 </SC.UserSettigs>
                 <SC.Triangle></SC.Triangle>
@@ -76,7 +76,7 @@ const Header = () => {
           </>
         ) : (
           <SC.LoginIcon to="/login">
-            <SVGIcon src={IconLogin} color="black" size="2.9rem" />
+            <SVGIcon src={IconLogin} color="black" size="3.5rem" />
           </SC.LoginIcon>
         )}
         <SC.Menu
