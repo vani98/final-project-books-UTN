@@ -7,7 +7,7 @@ export const SearchContainer = styled.div`
   justify-content: center;
 `;
 export const SearchInput = styled.input`
-  width: 35rem;
+  width: 30rem;
   height: 3.6rem;
   padding: 1rem 2rem;
   border-radius: 2rem;
@@ -18,6 +18,11 @@ export const SearchInput = styled.input`
   :focus {
     outline: none;
   }
+  @media (${themes.devices.laptop}) {
+    width: 19rem;
+    font-size: 1rem;
+    padding: 0rem 1.5rem;
+  }
 `;
 export const SearchButton = styled.img`
   position: absolute;
@@ -26,12 +31,15 @@ export const SearchButton = styled.img`
   right: 2rem;
   margin: auto;
   height: 2rem;
-  color: ${themes.colors.grey[0]}; ;
+  color: ${themes.colors.grey[0]};
+  @media (${themes.devices.laptop}) {
+    height: 1.5rem;
+  }
 `;
 
 export const SearchResults = styled.div`
   position: absolute;
-  top: 8rem;
+  top: 9rem;
   right: 0;
   padding: 1rem;
   width: 100%;

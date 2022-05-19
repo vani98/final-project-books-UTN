@@ -1,9 +1,9 @@
 import * as SC from "./BookCard.styles";
-import { priceFormat } from "../../../utils";
-import SVGIcon from "../../../components/SVGIcon";
-import { IconAddToCart, IconInfo } from "../../../assets/images";
+import { priceFormat } from "../../utils";
+import SVGIcon from "../SVGIcon";
+import { IconAddToCart, IconInfo } from "../../assets/images";
 import { useNavigate } from "react-router-dom";
-import useAddToCart from "../../../hooks/useAddToCart";
+import useAddToCart from "../../hooks/useAddToCart";
 
 const MAX_CHARACTERS = 80;
 const BookCard = ({ data }) => {

@@ -28,6 +28,11 @@ export const LoginForm = styled.form`
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
+  @media (${themes.devices.mobileL}) {
+    input {
+      width: 30rem;
+    }
+  }
 `;
 
 export const InputWrapper = styled.div`

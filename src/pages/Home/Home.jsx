@@ -4,7 +4,7 @@ import { SVGIcon } from "../../components/SVGIcon/SVGIcon.styles";
 import * as SC from "./Home.styles";
 import Layout from "../../components/Layout";
 import Button from "../../components/Button";
-import BookCard from "../Books/BookCard";
+import BookCard from "../../components/BookCard";
 import useApi from "../../hooks/useApi";
 import { useNavigate } from "react-router-dom";
 

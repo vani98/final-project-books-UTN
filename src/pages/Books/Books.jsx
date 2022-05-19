@@ -1,9 +1,8 @@
 import * as SC from "./Books.styles";
 import Layout from "../../components/Layout/Layout";
-
 import useApi from "../../hooks/useApi";
 import Loader from "../../components/Loader";
-import BookCard from "./BookCard";
+import BookCard from "../../components/BookCard";
 
 const Books = () => {
   const [bookData, isLoading] = useApi("books.json");

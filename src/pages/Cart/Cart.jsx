@@ -127,7 +127,7 @@ const Cart = () => {
       </SC.Container>
       {showPopUp && (
         <PopUp>
-          <SC.PurchasedText>Successfully Purchased</SC.PurchasedText>
+          <p>Successfully Purchased</p>
         </PopUp>
       )}
     </Layout>

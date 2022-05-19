@@ -5,4 +5,7 @@ export const SVGIcon = styled.div`
   background-color: ${(props) => props.color};
   height: ${(props) => props.size};
   width: ${(props) => props.size};
+  :hover {
+    background-color: ${(props) => props.hoverBgColor};
+  }
 `;

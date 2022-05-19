@@ -14,6 +14,14 @@ export const FooterTop = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 3rem 7rem;
+  @media (${themes.devices.laptop}) {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    > * {
+      margin: 2rem;
+    }
+  }
 `;
 
 export const Title = styled.h2`
@@ -27,6 +35,14 @@ export const Contact = styled.div`
   }
   div {
     display: flex;
+  }
+  @media (${themes.devices.laptop}) {
+    div {
+      margin-right: 2rem;
+    }
+    p {
+      margin: auto;
+    }
   }
 `;
 
@@ -57,12 +73,21 @@ export const Payment = styled.div`
 export const FooterBottom = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
   background-color: ${themes.colors.grey[3]};
 
   a {
     color: black;
     text-decoration: none;
+  }
+  @media (${themes.devices.laptop}) {
+    flex-direction: column;
+    padding-top: 0;
+    a {
+      margin: 2rem 0;
+      font-size: 1.4rem;
+    }
   }
 `;
 
@@ -79,4 +104,12 @@ export const Navigation = styled.div`
   a:hover {
     opacity: 60%;
   }
+
+  @media (${themes.devices.mobileL}) {
+    a {
+      margin-left: 1.7rem;
+    }
+  }
+  /* a {
+    } */
 `;

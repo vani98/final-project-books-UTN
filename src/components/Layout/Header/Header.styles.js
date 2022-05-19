@@ -27,6 +27,9 @@ export const NavLink = styled(Link)`
     color: ${themes.colors.primary};
     transition: color 0.2s;
   }
+  @media (${themes.devices.laptop}) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Navigation = styled.div`
@@ -43,16 +46,63 @@ export const ToCart = styled(Link)`
   margin-left: 1.5rem;
 `;
 
-export const UserIcon = styled.div`
+export const UserIcon = styled.p`
+  user-select: none;
   margin-left: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 4rem;
   height: 4rem;
-  background-color: ${themes.colors.grey[1]};
-  /* color: white; */
+  cursor: pointer;
+  background-color: ${themes.colors.primary};
+  color: white;
   border-radius: 50%;
-
   text-transform: capitalize;
+  :hover {
+    background-color: ${themes.colors.orange[1]};
+  }
+`;
+
+export const LoginLink = styled(Link)`
+  margin: 2rem;
+`;
+
+export const UserSettigs = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 7.9rem;
+  right: 1.4rem;
+  padding: 2rem 3rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  background-color: ${themes.colors.grey[0]};
+  span {
+    color: ${themes.colors.primary};
+    text-transform: uppercase;
+  }
+  a {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    padding: 0.3rem;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+
+    :hover {
+      transition: all 0.3s ease;
+      transform: scale(1.1);
+      color: ${themes.colors.orange[1]};
+    }
+  }
+`;
+
+export const Triangle = styled.div`
+  position: absolute;
+  top: 6.9rem;
+  right: 3rem;
+  border-right: 1rem solid transparent;
+  border-bottom: 1rem solid ${themes.colors.grey[0]};
+  border-left: 1rem solid transparent;
 `;

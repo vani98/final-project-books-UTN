@@ -16,6 +16,14 @@ export const Container = styled.div`
   h2:not(:first-child) {
     margin: 3rem 0;
   }
+  @media (${themes.devices.laptop}) {
+    h2 {
+      font-size: 3rem;
+      span {
+        font-size: 3rem;
+      }
+    }
+  }
 `;
 
 export const Team = styled.div`
@@ -37,7 +45,6 @@ export const Description = styled.p`
 export const ContactForm = styled.div`
   padding: 5rem 10rem;
   border: 1px solid ${themes.colors.grey[1]};
-  /* width: 85%; */
   margin-top: 4rem;
   h2 {
     text-align: left;
@@ -65,7 +72,6 @@ export const ContactForm = styled.div`
   }
   textarea {
     padding: 0.2rem;
-    /* margin-bottom: 4rem; */
     border: 2px solid ${themes.colors.grey[1]};
     height: 150px;
     :focus {
@@ -73,9 +79,12 @@ export const ContactForm = styled.div`
       border: 2px solid ${themes.colors.primary};
     }
   }
-
   button {
     margin-top: 4rem;
+    padding: 0;
+  }
+  @media (${themes.devices.tablet}) {
+    padding: 5rem 5rem;
   }
 `;
 

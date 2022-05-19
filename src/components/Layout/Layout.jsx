@@ -19,11 +19,11 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <SC.Container>{children}</SC.Container>
       {showScrollArrow && (
         <SC.ToTop onClick={() => window.scrollTo(0, 0)}>
-          <SVGIcon src={IconToTop} size="5rem" color="white"></SVGIcon>
+          <SVGIcon src={IconToTop} size="5rem" color="white" />
         </SC.ToTop>
       )}
       <Footer />

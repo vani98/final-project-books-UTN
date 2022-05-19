@@ -6,11 +6,6 @@ export const Container = styled.div`
   min-height: 70vh;
 `;
 
-export const PurchasedText = styled.div`
-  color: ${themes.colors.primary};
-  font-size: 2rem;
-`;
-
 export const Title = styled.h2`
   font-size: 3rem;
   margin-bottom: 2rem;
@@ -39,6 +34,16 @@ export const Table = styled.table`
     font-size: 2.4rem;
     padding: 1rem;
   }
+  @media (${themes.devices.laptop}) {
+    th {
+      font-size: 1.6rem;
+    }
+  }
+  @media (${themes.devices.tablet}) {
+    th {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export const Item = styled.tr`
@@ -53,10 +58,25 @@ export const Item = styled.tr`
   }
 
   img {
+    margin-left: 1rem;
     height: 9rem;
     width: 7rem;
     border-radius: 0.8rem;
     filter: brightness(80%);
+  }
+  @media (${themes.devices.laptop}) {
+    td {
+      font-size: 1.2rem;
+    }
+  }
+  @media (${themes.devices.tablet}) {
+    img {
+      height: 7rem;
+      width: 5rem;
+    }
+    td {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -68,6 +88,9 @@ export const Delete = styled(SVGIcon)`
     background-color: ${themes.colors.red[0]};
 
     transition: 0.2s ease;
+  }
+  @media (${themes.devices.laptop}) {
+    height: 2.5rem;
   }
 `;
 
@@ -81,6 +104,11 @@ export const Total = styled.tr`
   }
   td:nth-child(1) {
     text-align: start;
+  }
+  @media (${themes.devices.laptop}) {
+    td {
+      font-size: 1.5rem;
+    }
   }
 `;
 

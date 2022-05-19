@@ -9,14 +9,21 @@ export const PageTitle = styled.h2`
     font-size: 4rem;
     color: ${themes.colors.primary};
   }
-  
+  @media (${themes.devices.laptop}) {
+    font-size: 3rem;
+    span {
+      font-size: 3rem;
+    }
+  }
 `;
 
 export const PageSubTitle = styled.p`
   margin-bottom: 5rem;
   font-size: 3rem;
   text-align: center;
- 
+  @media (${themes.devices.laptop}) {
+    font-size: 2rem;
+  }
 `;
 
 export const BookContainer = styled.div`

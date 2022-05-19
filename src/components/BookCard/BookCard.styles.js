@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import SVGIcon from "../../../components/SVGIcon";
-import themes from "../../../themes";
+import themes from "../../themes";
 
 const startTransition = `0.2s ease`;
 const endTransition = `0.2s ease`;
@@ -28,6 +27,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 20rem;
+  height: 30rem;
   aspect-ratio: 9/14;
   border: 1px solid grey;
 

@@ -9,6 +9,12 @@ const themes = {
     green: ["#b4e197"],
   },
   fontWeight: ["700"],
+  devices: {
+    // mobileS: "max-width: 320px",
+    mobileL: "max-width: 425px",
+    tablet: "max-width: 768px",
+    laptop: "max-width: 1000px",
+  },
 };
 
 export default themes;
