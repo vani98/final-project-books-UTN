@@ -93,15 +93,10 @@ export const Container = styled.div`
     }
   }
   @media (${themes.devices.mobileL}) {
-    a,
-    p {
-      font-size: 1.3rem;
-    }
-    ${Title} {
-      font-size: 1.9rem;
-    }
     ${Navigation} {
       a {
+        font-size: 1.3rem;
+
         margin-left: 1.7rem;
       }
     }
