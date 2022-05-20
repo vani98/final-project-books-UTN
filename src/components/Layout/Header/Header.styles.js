@@ -100,16 +100,16 @@ export const UserSettigs = styled.div`
   p {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
   }
   span {
-    margin-left: 0.3rem;
+    margin-left: 0.5rem;
+    font-weight: ${themes.fontWeight[0]};
     color: ${themes.colors.primary};
     text-transform: uppercase;
   }
   a {
-    margin-top: 1rem;
     font-size: 1.4rem;
-    padding: 0.3rem;
     text-decoration: none;
     color: black;
     transition: all 0.3s ease;
