@@ -93,17 +93,15 @@ export const UserSettigs = styled.div`
   top: 7.9rem;
   right: 1.4rem;
   padding: 1.5rem 2rem;
-  max-width: 22rem;
+  max-width: 24rem;
   text-align: left;
   border-radius: 0.5rem;
   background-color: ${themes.colors.grey[0]};
+  word-wrap: wrap;
   p {
-    display: flex;
-    flex-wrap: wrap;
     margin-bottom: 1rem;
   }
   span {
-    margin-left: 0.5rem;
     font-weight: ${themes.fontWeight[0]};
     color: ${themes.colors.primary};
     text-transform: uppercase;
