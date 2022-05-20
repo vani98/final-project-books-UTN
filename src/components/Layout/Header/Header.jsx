@@ -64,7 +64,7 @@ const Header = () => {
               <>
                 <SC.UserSettigs>
                   <p>
-                    Singed in as: <span>{!!userValues && userValues.user}</span>
+                    Singed in as<span>{!!userValues && userValues.user}</span>
                   </p>
                   <Link to="/" onClick={handleLogOut}>
                     Sign out

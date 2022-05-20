@@ -26,4 +26,7 @@ export const EditorialContainer = styled.div`
   grid-template-columns: repeat(auto-fill, 32rem);
   gap: 5rem;
   justify-content: center;
+  @media (${themes.devices.mobileM}) {
+    grid-template-columns: repeat(auto-fill, 29rem);
+  }
 `;

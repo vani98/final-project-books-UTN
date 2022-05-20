@@ -115,7 +115,6 @@ export const UserSettigs = styled.div`
     transition: all 0.3s ease;
     :hover {
       transition: all 0.3s ease;
-      transform: scale(1.1);
       color: ${themes.colors.orange[1]};
     }
   }
