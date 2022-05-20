@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <SC.FooterContainer>
+    <SC.Container>
       <SC.FooterTop>
         <SC.Contact>
           <SC.Title>Contact</SC.Title>
@@ -71,7 +71,7 @@ const Footer = () => {
           <Link to="/about-us">About Us</Link>
         </SC.Navigation>
       </SC.FooterBottom>
-    </SC.FooterContainer>
+    </SC.Container>
   );
 };
 

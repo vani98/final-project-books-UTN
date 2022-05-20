@@ -40,16 +40,16 @@ const Header = () => {
       <SC.Container>
         <SC.Navigation showMenu={menuOpen}>
           <li>
-            <SC.NavLink to="/">Home</SC.NavLink>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <SC.NavLink to="/books">Books</SC.NavLink>
+            <Link to="/books">Books</Link>
           </li>
           <li>
-            <SC.NavLink to="/editorials">Editorials</SC.NavLink>
+            <Link to="/editorials">Editorials</Link>
           </li>
           <li>
-            <SC.NavLink to="/about-us">About us</SC.NavLink>
+            <Link to="/about-us">About us</Link>
           </li>
         </SC.Navigation>
 

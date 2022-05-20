@@ -4,29 +4,8 @@ import themes from "../../../themes";
 import SVGIcon from "../../SVGIcon";
 
 export const LogoCompany = styled(SVGIcon)`
-  @media (${themes.devices.tablet}) {
-    height: 5rem;
-    width: 5rem;
-  }
-  @media (${themes.devices.mobileL}) {
-    height: 4rem;
-    width: 4rem;
-  }
-`;
-
-export const NavLink = styled(Link)`
-  color: black;
-  font-size: 2rem;
-  text-decoration: none;
-  margin-right: 3rem;
-  transition: color 0.2s;
-
   :hover {
-    color: ${themes.colors.primary};
-    transition: color 0.2s;
-  }
-  @media (${themes.devices.laptop}) {
-    font-size: 1.5rem;
+    background-color: ${themes.colors.orange[1]};
   }
 `;
 
@@ -39,9 +18,18 @@ export const Navigation = styled.ul`
   list-style: none;
   display: flex;
   transition: ease 0.5;
-
+  a {
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-right: 3rem;
+    transition: color 0.2s;
+    :hover {
+      color: ${themes.colors.primary};
+      transition: color 0.2s;
+    }
+  }
   @media (${themes.devices.tablet}) {
-    /* display: ${(props) => (props.showMenu ? "flex" : "none")}; */
     position: absolute;
     top: 8.5rem;
     right: 0;
@@ -74,18 +62,6 @@ export const Navigation = styled.ul`
 
 export const ToCart = styled(Link)`
   margin-left: 1.5rem;
-  @media (${themes.devices.tablet}) {
-    div {
-      height: 2.5rem;
-      width: 2.5rem;
-    }
-  }
-  @media (${themes.devices.mobileL}) {
-    div {
-      height: 2.2rem;
-      width: 2.2rem;
-    }
-  }
 `;
 
 export const UserIcon = styled.p`
@@ -104,32 +80,10 @@ export const UserIcon = styled.p`
   :hover {
     background-color: ${themes.colors.orange[1]};
   }
-  @media (${themes.devices.tablet}) {
-    width: 3.2rem;
-    height: 3.2rem;
-    margin-right: 2rem;
-  }
-  @media (${themes.devices.mobileL}) {
-    width: 3rem;
-    height: 3rem;
-    margin-right: 2rem;
-  }
 `;
 
 export const LoginIcon = styled(Link)`
   margin: 0 2rem;
-  @media (${themes.devices.tablet}) {
-    div {
-      height: 2.5rem;
-      width: 2.5rem;
-    }
-  }
-  @media (${themes.devices.mobileL}) {
-    div {
-      height: 2.2rem;
-      width: 2.2rem;
-    }
-  }
 `;
 
 export const UserSettigs = styled.div`
@@ -159,15 +113,11 @@ export const UserSettigs = styled.div`
     text-decoration: none;
     color: black;
     transition: all 0.3s ease;
-
     :hover {
       transition: all 0.3s ease;
       transform: scale(1.1);
       color: ${themes.colors.orange[1]};
     }
-  }
-  @media (${themes.devices.tablet}) {
-    right: 6rem;
   }
 `;
 
@@ -178,20 +128,10 @@ export const Triangle = styled.div`
   border-right: 1rem solid transparent;
   border-bottom: 1rem solid ${themes.colors.grey[0]};
   border-left: 1rem solid transparent;
-  @media (${themes.devices.tablet}) {
-    right: 7rem;
-  }
 `;
 
 export const Menu = styled(SVGIcon)`
   display: none;
-  @media (${themes.devices.tablet}) {
-    display: inline-block;
-  }
-  @media (${themes.devices.mobileL}) {
-    height: 3rem;
-    width: 3rem;
-  }
 `;
 
 export const Wrapper = styled.header`
@@ -201,6 +141,75 @@ export const Wrapper = styled.header`
   justify-content: space-between;
   height: 8.5rem;
   border-bottom: 2px solid ${themes.colors.grey[0]};
+
+  @media (${themes.devices.laptop}) {
+    ${Navigation} {
+      a {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (${themes.devices.tablet}) {
+    ${LogoCompany} {
+      height: 5rem;
+      width: 5rem;
+    }
+    ${ToCart} {
+      div {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+    ${UserIcon} {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin-right: 2rem;
+    }
+    ${LoginIcon} {
+      div {
+        height: 2.8rem;
+        width: 2.8rem;
+      }
+    }
+    ${UserSettigs} {
+      right: 6rem;
+    }
+    ${Menu} {
+      display: inline-block;
+    }
+    ${Triangle} {
+      right: 7rem;
+    }
+  }
+
+  @media (${themes.devices.mobileL}) {
+    ${LogoCompany} {
+      height: 4rem;
+      width: 4rem;
+    }
+    ${ToCart} {
+      div {
+        height: 2.2rem;
+        width: 2.2rem;
+      }
+    }
+    ${UserIcon} {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 2rem;
+    }
+    ${LoginIcon} {
+      div {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+    ${Menu} {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
   @media (${themes.devices.mobileM}) {
     padding: 0 1rem;
   }

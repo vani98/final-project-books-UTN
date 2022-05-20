@@ -1,31 +1,6 @@
 import styled from "styled-components";
 import themes from "../../themes";
 
-export const Container = styled.div`
-  h2 {
-    font-size: 4rem;
-    text-align: center;
-    span {
-      font-size: 4rem;
-      color: ${themes.colors.primary};
-    }
-  }
-  h2:first-child {
-    margin-bottom: 3rem;
-  }
-  h2:not(:first-child) {
-    margin: 3rem 0;
-  }
-  @media (${themes.devices.laptop}) {
-    h2 {
-      font-size: 3rem;
-      span {
-        font-size: 3rem;
-      }
-    }
-  }
-`;
-
 export const Team = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -83,9 +58,6 @@ export const ContactForm = styled.div`
     margin-top: 4rem;
     padding: 0;
   }
-  @media (${themes.devices.tablet}) {
-    padding: 5rem 5rem;
-  }
 `;
 
 export const Error = styled.p`
@@ -98,4 +70,34 @@ export const Sent = styled.p`
   margin-top: 1rem;
   font-size: 2rem;
   color: ${themes.colors.green[0]};
+`;
+
+export const Container = styled.div`
+  h2 {
+    font-size: 4rem;
+    text-align: center;
+    span {
+      font-size: 4rem;
+      color: ${themes.colors.primary};
+    }
+  }
+  h2:first-child {
+    margin-bottom: 3rem;
+  }
+  h2:not(:first-child) {
+    margin: 3rem 0;
+  }
+  @media (${themes.devices.laptop}) {
+    h2 {
+      font-size: 3rem;
+      span {
+        font-size: 3rem;
+      }
+    }
+  }
+  @media (${themes.devices.tablet}) {
+    ${ContactForm} {
+      padding: 5rem 5rem;
+    }
+  }
 `;

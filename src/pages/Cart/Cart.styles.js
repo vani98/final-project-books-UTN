@@ -2,16 +2,9 @@ import styled from "styled-components";
 import SVGIcon from "../../components/SVGIcon";
 import themes from "../../themes";
 
-export const Container = styled.div`
-  min-height: 70vh;
-`;
-
 export const Title = styled.h2`
   font-size: 3rem;
   margin-bottom: 2rem;
-  @media (${themes.devices.mobileM}) {
-    font-size: 2rem;
-  }
 `;
 
 export const NothingOnCart = styled.div`
@@ -37,27 +30,6 @@ export const Table = styled.table`
     font-size: 2.4rem;
     padding: 1rem;
   }
-  @media (${themes.devices.laptop}) {
-    th {
-      font-size: 1.6rem;
-    }
-  }
-  @media (${themes.devices.tablet}) {
-    th {
-      font-size: 1.2rem;
-    }
-  }
-  @media (${themes.devices.mobileL}) {
-    th {
-      font-size: 1rem;
-      padding: 0;
-    }
-  }
-  @media (${themes.devices.mobileM}) {
-    th {
-      font-size: 0.7rem;
-    }
-  }
 `;
 
 export const Item = styled.tr`
@@ -78,35 +50,6 @@ export const Item = styled.tr`
     border-radius: 0.8rem;
     filter: brightness(80%);
   }
-  @media (${themes.devices.laptop}) {
-    td {
-      font-size: 1.2rem;
-    }
-  }
-  @media (${themes.devices.tablet}) {
-    img {
-      height: 7rem;
-      width: 5rem;
-    }
-    td {
-      font-size: 1rem;
-    }
-  }
-  @media (${themes.devices.mobileL}) {
-    img {
-      height: 6rem;
-      width: 4rem;
-    }
-  }
-  @media (${themes.devices.mobileM}) {
-    img {
-      height: 3rem;
-      width: 2rem;
-    }
-    td {
-      font-size: 0.7rem;
-    }
-  }
 `;
 
 export const Delete = styled(SVGIcon)`
@@ -117,15 +60,6 @@ export const Delete = styled(SVGIcon)`
     background-color: ${themes.colors.red[0]};
 
     transition: 0.2s ease;
-  }
-  @media (${themes.devices.laptop}) {
-    height: 2.5rem;
-  }
-  @media (${themes.devices.mobileL}) {
-    height: 1.7rem;
-  }
-  @media (${themes.devices.mobileM}) {
-    height: 1.3rem;
   }
 `;
 
@@ -140,28 +74,101 @@ export const Total = styled.tr`
   td:nth-child(1) {
     text-align: start;
   }
-  @media (${themes.devices.laptop}) {
-    td {
-      font-size: 1.5rem;
-    }
-  }
-  @media (${themes.devices.mobileL}) {
-    td {
-      font-size: 1.2rem;
-    }
-  }
-  @media (${themes.devices.mobileM}) {
-    td {
-      font-size: 1rem;
-    }
-  }
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: end;
   margin-top: 4rem;
+`;
+
+export const Container = styled.div`
+  @media (${themes.devices.laptop}) {
+    ${Table} {
+      th {
+        font-size: 1.6rem;
+      }
+    }
+    ${Item} {
+      td {
+        font-size: 1.2rem;
+      }
+    }
+    ${Delete} {
+      height: 2.5rem;
+    }
+    ${Total} {
+      td {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  @media (${themes.devices.tablet}) {
+    ${Table} {
+      th {
+        font-size: 1.2rem;
+      }
+    }
+    ${Item} {
+      img {
+        height: 7rem;
+        width: 5rem;
+      }
+      td {
+        font-size: 1rem;
+      }
+    }
+  }
   @media (${themes.devices.mobileL}) {
-    justify-content: center;
+    ${Table} {
+      th {
+        font-size: 1rem;
+        padding: 0;
+      }
+    }
+    ${Item} {
+      img {
+        height: 6rem;
+        width: 4rem;
+      }
+    }
+    ${Delete} {
+      height: 1.7rem;
+    }
+    ${Total} {
+      td {
+        font-size: 1.2rem;
+      }
+    }
+    ${ButtonContainer} {
+      justify-content: center;
+    }
+  }
+  @media (${themes.devices.mobileM}) {
+    ${Title} {
+      font-size: 2rem;
+    }
+    ${Table} {
+      th {
+        font-size: 0.7rem;
+      }
+    }
+    ${Item} {
+      img {
+        height: 3rem;
+        width: 2rem;
+      }
+      td {
+        font-size: 0.7rem;
+      }
+    }
+    ${Delete} {
+      height: 1.3rem;
+    }
+    ${Total} {
+      td {
+        font-size: 1rem;
+      }
+    }
   }
 `;

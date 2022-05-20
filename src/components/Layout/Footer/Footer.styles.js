@@ -1,35 +1,16 @@
 import styled from "styled-components";
 import themes from "../../../themes";
 
-export const FooterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-top: 2px solid ${themes.colors.grey[0]};
-  background-color: ${themes.colors.white[0]};
-  border-bottom: 2px solid ${themes.colors.grey[0]};
-`;
-
 export const FooterTop = styled.div`
   border-bottom: 1px solid ${themes.colors.grey[0]};
   display: flex;
   justify-content: space-between;
   padding: 5rem 7rem;
-  @media (${themes.devices.laptop}) {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
-    gap: 3rem;
-  }
 `;
 
 export const Title = styled.h2`
   font-size: 2rem;
   margin-bottom: 4rem;
-
-  @media (${themes.devices.laptop}) {
-    margin-bottom: 2.5rem;
-  }
 `;
 
 export const Contact = styled.div`
@@ -80,24 +61,42 @@ export const FooterBottom = styled.div`
       color: ${themes.colors.primary};
     }
   }
-  @media (${themes.devices.laptop}) {
-    flex-direction: column;
-    padding-top: 0;
-    a {
-      margin: 2rem 0;
-      font-size: 1.4rem;
-    }
-  }
 `;
 
 export const Navigation = styled.div`
   a {
     margin-left: 4rem;
   }
+`;
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid ${themes.colors.grey[0]};
+  background-color: ${themes.colors.white[0]};
+  border-bottom: 2px solid ${themes.colors.grey[0]};
+
+  @media (${themes.devices.laptop}) {
+    ${FooterTop} {
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
+      gap: 3rem;
+    }
+    ${Title} {
+      margin-bottom: 2.5rem;
+    }
+    ${FooterBottom} {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
   @media (${themes.devices.mobileL}) {
-    a {
-      margin-left: 1.7rem;
+    ${Navigation} {
+      a {
+        margin-left: 1.7rem;
+      }
     }
   }
 `;

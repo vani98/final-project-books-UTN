@@ -22,7 +22,7 @@ import IconToTop from "./IconToTop.svg";
 import IconLogin from "./IconLogin.svg";
 import IconMenu from "./IconMenu.svg";
 import IconSmile from "./IconSmile.svg";
-
+import IconSad from "./IconSad.svg";
 export {
   IconLogo,
   IconSearch,
@@ -48,4 +48,5 @@ export {
   IconLogin,
   IconMenu,
   IconSmile,
+  IconSad,
 };

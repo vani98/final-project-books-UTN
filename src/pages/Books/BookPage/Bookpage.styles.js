@@ -1,33 +1,14 @@
 import styled from "styled-components";
 import themes from "../../../themes";
 
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  p {
-    margin-bottom: 0.7rem;
-    font-size: 1.42rem;
-  }
-  @media (${themes.devices.tablet}) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
 export const Title = styled.h2`
   font-size: 3rem;
-  @media (${themes.devices.tablet}) {
-    margin-top: 2rem;
-  }
 `;
 
 export const Image = styled.img`
   height: 43rem;
   min-width: 30rem;
   margin-right: 4rem;
-  @media (${themes.devices.tablet}) {
-    margin: auto;
-  }
 `;
 
 export const Tag = styled.div`
@@ -41,9 +22,6 @@ export const Tag = styled.div`
     border-radius: 2rem;
     color: white;
     background-color: ${themes.colors.primary};
-  }
-  @media (${themes.devices.tablet}) {
-    justify-content: center;
   }
 `;
 
@@ -68,9 +46,31 @@ export const Action = styled.div`
     font-weight: ${themes.fontWeight[0]};
     color: ${themes.colors.primary};
   }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  p {
+    margin-bottom: 0.7rem;
+    font-size: 1.42rem;
+  }
   @media (${themes.devices.tablet}) {
-    button {
-      padding: 0 4rem;
+    flex-direction: column;
+    text-align: center;
+    ${Title} {
+      margin-top: 2rem;
+    }
+    ${Image} {
+      margin: auto;
+    }
+    ${Tag} {
+      justify-content: center;
+    }
+    ${Action} {
+      button {
+        padding: 0 4rem;
+      }
     }
   }
 `;

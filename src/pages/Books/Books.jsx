@@ -13,7 +13,7 @@ const Books = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <>
+        <SC.Container>
           <SC.PageTitle>
             Conoce el catálogo de libros que tenemos <span>para ti</span>
           </SC.PageTitle>
@@ -24,7 +24,7 @@ const Books = () => {
               <BookCard data={book} genreData={genreData} key={book.id} />
             ))}
           </SC.BookContainer>
-        </>
+        </SC.Container>
       )}
     </Layout>
   );

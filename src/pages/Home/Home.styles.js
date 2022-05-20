@@ -5,72 +5,18 @@ export const Welcome = styled.div`
   display: flex;
   align-items: center;
   height: 60rem;
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    > span {
+      font-size: 4rem;
+      font-weight: 700;
+      color: ${themes.colors.primary};
+    }
+  }
   img {
     width: 40rem;
     margin-left: 14rem;
-  }
-  @media (${themes.devices.laptop}) {
-    img {
-      margin-left: 3rem;
-    }
-  }
-  @media (${themes.devices.tablet}) {
-    img {
-      width: 33rem;
-    }
-  }
-  @media (${themes.devices.mobileL}) {
-    img {
-      width: 25rem;
-    }
-  }
-
-  @media (${themes.devices.tablet}) {
-    height: 100%;
-
-    flex-direction: column;
-    text-align: center;
-    img {
-      margin-top: 8rem;
-    }
-  }
-
-  @media (${themes.devices.mobileL}) {
-    img {
-      height: 19rem;
-    }
-  }
-`;
-
-export const Title = styled.p`
-  font-size: 3.5rem;
-  font-weight: 700;
-  > span {
-    font-size: 4rem;
-    font-weight: 700;
-    color: ${themes.colors.primary};
-  }
-  @media (${themes.devices.laptop}) {
-    font-size: 3rem;
-    > span {
-      font-size: 3rem;
-    }
-  }
-`;
-
-export const Text = styled.p`
-  margin-top: 6rem;
-  font-size: 3rem;
-  text-align: center;
-  > span {
-    font-size: 3rem;
-    color: ${themes.colors.primary};
-  }
-  @media (${themes.devices.laptop}) {
-    font-size: 2.2rem;
-    > span {
-      font-size: 2.2rem;
-    }
   }
 `;
 
@@ -83,13 +29,8 @@ export const BooksAndPublishers = styled.div`
   p:first-child {
     margin-bottom: 9rem;
   }
-
-  @media (${themes.devices.laptop}) {
-    p:first-child {
-      margin-bottom: 4rem;
-    }
-  }
 `;
+
 export const Card = styled.div`
   margin: 0 3rem;
   height: 30rem;
@@ -104,11 +45,6 @@ export const Card = styled.div`
   :hover div {
     transform: scale(0.9);
   }
-  @media (${themes.devices.mobileL}) {
-    div {
-      height: 16rem;
-    }
-  }
 `;
 
 export const Random = styled.div`
@@ -116,18 +52,6 @@ export const Random = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  @media (${themes.devices.laptop}) {
-    flex-direction: column;
-    button {
-      margin-bottom: 4rem;
-    }
-  }
-
-  @media (${themes.devices.mobileL}) {
-    button {
-      padding: 2rem 6rem;
-    }
-  }
 `;
 
 export const QuestionCard = styled.div`
@@ -141,5 +65,76 @@ export const QuestionCard = styled.div`
   span {
     font-size: 20rem;
     color: ${themes.colors.grey[2]};
+  }
+`;
+
+export const Container = styled.div`
+  h3 {
+    margin-top: 6rem;
+    font-size: 3rem;
+    text-align: center;
+    > span {
+      font-size: 3rem;
+      color: ${themes.colors.primary};
+    }
+  }
+  @media (${themes.devices.laptop}) {
+    h3 {
+      font-size: 2.2rem;
+      > span {
+        font-size: 2.2rem;
+      }
+    }
+    ${Welcome} {
+      h2 {
+        font-size: 3rem;
+        > span {
+          font-size: 3rem;
+        }
+      }
+      img {
+        margin-left: 3rem;
+      }
+    }
+    ${BooksAndPublishers} {
+      p:first-child {
+        margin-bottom: 4rem;
+      }
+    }
+    ${Random} {
+      flex-direction: column;
+      button {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+  @media (${themes.devices.tablet}) {
+    ${Welcome} {
+      height: 100%;
+      flex-direction: column;
+      text-align: center;
+      img {
+        width: 33rem;
+        margin-top: 8rem;
+      }
+    }
+  }
+  @media (${themes.devices.mobileL}) {
+    ${Welcome} {
+      img {
+        width: 25rem;
+        height: 19rem;
+      }
+    }
+    ${Card} {
+      div {
+        height: 16rem;
+      }
+    }
+    ${Random} {
+      button {
+        padding: 2rem 6rem;
+      }
+    }
   }
 `;
