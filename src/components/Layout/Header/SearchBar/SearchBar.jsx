@@ -54,7 +54,7 @@ const SearchBar = () => {
     <>
       <SC.SearchContainer>
         <SC.SearchInput
-          placeholder="Enter the name of the book..."
+          placeholder="Enter the name or author..."
           onChange={searchChange}
           value={searchBoxValue}
         />
