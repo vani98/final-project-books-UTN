@@ -46,6 +46,11 @@ export const Action = styled.div`
     font-weight: ${themes.fontWeight[0]};
     color: ${themes.colors.primary};
   }
+  @media (${themes.devices.tablet}) {
+    button {
+      padding: 0 4rem;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -66,11 +71,6 @@ export const Container = styled.div`
     }
     ${Tag} {
       justify-content: center;
-    }
-    ${Action} {
-      button {
-        padding: 0 4rem;
-      }
     }
   }
 `;
